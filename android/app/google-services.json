@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "342031188139",
+    "project_id": "eloquentapp-a26f9",
+    "storage_bucket": "eloquentapp-a26f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342031188139:android:d3d176e08a35e1fec237ee",
+        "android_client_info": {
+          "package_name": "com.gp.eloquentapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "342031188139-knrdjksnlnrpmqgql2tplth1l861cpq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuCyxRvhFgatKPPZZn2upoFh98U4ooGfM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "342031188139-knrdjksnlnrpmqgql2tplth1l861cpq2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
