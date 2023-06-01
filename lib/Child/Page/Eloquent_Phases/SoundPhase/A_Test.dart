@@ -121,7 +121,8 @@ class _A_Test_PageState extends State<A_Test_Page> {
   bool isSoundPlayed = false;
 
   List<bool> soundsPlayed = [false, false, false]; //
-
+  //Child Test
+  // Check the correct answer based on the selected sound
   void playSound() {
     final AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
     assetsAudioPlayer.open(
@@ -129,8 +130,6 @@ class _A_Test_PageState extends State<A_Test_Page> {
       autoStart: true,
       showNotification: true,
     );
-
-    // Determine the correct index based on the selected sound
     switch (currentSoundPath) {
       case "images/AASounds.wav":
         correctIndex = 0;
@@ -166,41 +165,7 @@ class _A_Test_PageState extends State<A_Test_Page> {
         showDialog(
           context: context,
           builder: (BuildContext context) {
-            return AlertDialog(
-              title: Image.asset(
-                'images/True.png',
-                height: 70,
-              ),
-              content: const Text(
-                "إجابة صحيحة",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Color(0xff394445),
-                  fontSize: 25,
-                  fontFamily: "Cairo",
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text(
-                    "إستمر",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 106, 152, 186),
-                      fontSize: 15,
-                      fontFamily: "Cairo",
-                      fontWeight: FontWeight.w900,
-                    ),
-                  ),
-                ),
-              ],
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-            );
+            return CorrectAnswer(context);
           },
         );
       } else {
@@ -208,58 +173,96 @@ class _A_Test_PageState extends State<A_Test_Page> {
         showDialog(
             context: context,
             builder: (BuildContext context) {
-              return AlertDialog(
-                title: SizedBox(
-                  height: 95,
-                  width: 80,
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    'X',
-                    style: TextStyle(
-                      color: Color(0xff394445),
-                      fontSize: 70,
-                      fontFamily: "Cairo",
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                content: const Text(
-                  "إجابة خاطئة",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Color(0xff394445),
-                    fontSize: 20,
-                    fontFamily: "Cairo",
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text(
-                      "حاول مرة اخرى",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 106, 152, 186),
-                        fontSize: 13,
-                        fontFamily: "Cairo",
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                  ),
-                ],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              );
+              return WrongAnswer(context);
             });
       }
-
-      // Determine whether the test is finished
-
-      // Enable the "Send Result to Firebase" button if the test is finished
     }
+  }
+
+  AlertDialog WrongAnswer(BuildContext context) {
+    return AlertDialog(
+      title: SizedBox(
+        height: 95,
+        width: 80,
+        child: Text(
+          textAlign: TextAlign.center,
+          'X',
+          style: TextStyle(
+            color: Color(0xff394445),
+            fontSize: 70,
+            fontFamily: "Cairo",
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      content: const Text(
+        "إجابة خاطئة",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Color(0xff394445),
+          fontSize: 20,
+          fontFamily: "Cairo",
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text(
+            "حاول مرة اخرى",
+            style: TextStyle(
+              color: Color.fromARGB(255, 106, 152, 186),
+              fontSize: 13,
+              fontFamily: "Cairo",
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+        ),
+      ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+    );
+  }
+
+  AlertDialog CorrectAnswer(BuildContext context) {
+    return AlertDialog(
+      title: Image.asset(
+        'images/True.png',
+        height: 70,
+      ),
+      content: const Text(
+        "إجابة صحيحة",
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          color: Color(0xff394445),
+          fontSize: 25,
+          fontFamily: "Cairo",
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text(
+            "إستمر",
+            style: TextStyle(
+              color: Color.fromARGB(255, 106, 152, 186),
+              fontSize: 15,
+              fontFamily: "Cairo",
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+        ),
+      ],
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+    );
   }
 
   void sendResultToFirebase(String TestID) {

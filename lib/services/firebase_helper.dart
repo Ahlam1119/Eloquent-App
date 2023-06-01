@@ -7,15 +7,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 //class for parent
 
+// create a new user with an email an password
 class FirebaseHelperParent {
   const FirebaseHelperParent._();
 
-//this function is to create a new user with an email an password
-
-  static final FirebaseAuth _auth =
-      FirebaseAuth.instance; //this is instance  from firebase auth
-  static final FirebaseFirestore _db =
-      FirebaseFirestore.instance; //this is instance  from firebase Cloud
+  static final FirebaseAuth _auth = FirebaseAuth.instance;
+  static final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   static Future<bool> saveUser(
       {required String email,
@@ -42,7 +39,6 @@ class FirebaseHelperParent {
 
       return true;
     } catch (e) {
-      //her add code to show user ther is somthing wrong
       return false;
     }
   }

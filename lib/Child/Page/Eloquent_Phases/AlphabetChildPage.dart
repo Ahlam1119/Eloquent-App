@@ -130,15 +130,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                               decoration: boxDecoration,
                               padding: const EdgeInsets.all(1),
                               child: Text(
-                                "ط£",
+                                "أ",
                                 textAlign: TextAlign.center,
-                                style:
-                                    LetterPasiing['ط­ط±ظپ ط§ظ„ط£ظ„ظپ'] == true
-                                        ? PassedtextStyle
-                                        : textStyle,
+                                style: LetterPasiing['حرف الألف'] == true
+                                    ? PassedtextStyle
+                                    : textStyle,
                               ),
                             ),
-                            LetterPasiing['ط­ط±ظپ ط§ظ„ط£ظ„ظپ'] == true
+                            LetterPasiing['حرف الألف'] == true
                                 ? Positioned(
                                     top: -2,
                                     left: 0,
@@ -148,7 +147,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                           ],
                         ),
                       ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط£ظ„ظپ'] == true
+                      LetterPasiing['حرف الألف'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -164,16 +163,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¨",
+                                      "ب",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¨ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الباء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¨ط§ط،'] == true
+                                  LetterPasiing['حرف الباء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -193,16 +190,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¨",
+                                      "ب",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¨ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الباء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¨ط§ط،'] == true
+                                  LetterPasiing['حرف الباء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -214,7 +209,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                               ),
                             ),
 
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط¨ط§ط،'] == true
+                      LetterPasiing['حرف الباء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -230,16 +225,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "طھ",
+                                      "ت",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„طھط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف التاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„طھط§ط،'] == true
+                                  LetterPasiing['حرف التاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -259,16 +252,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "طھ",
+                                      "ت",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„طھط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف التاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„طھط§ط،'] == true
+                                  LetterPasiing['حرف التاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -279,7 +270,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„طھط§ط،'] == true
+                      LetterPasiing['حرف التاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -295,16 +286,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط«",
+                                      "ث",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط«ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الثاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط«ط§ط،'] == true
+                                  LetterPasiing['حرف الثاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -324,16 +313,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط«",
+                                      "ث",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط«ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الثاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط«ط§ط،'] == true
+                                  LetterPasiing['حرف الثاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -344,7 +331,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط«ط§ط،'] == true
+                      LetterPasiing['حرف الثاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -360,16 +347,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¬",
+                                      "ج",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¬ظٹظ…'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الجيم'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¬ظٹظ…'] == true
+                                  LetterPasiing['حرف الجيم'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -389,16 +374,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¬",
+                                      "ج",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¬ظٹظ…'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الجيم'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¬ظٹظ…'] == true
+                                  LetterPasiing['حرف الجيم'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -409,7 +392,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط¬ظٹظ…'] == true
+                      LetterPasiing['حرف الجيم'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -425,16 +408,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط­",
+                                      "ح",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط­ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الحاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط­ط§ط،'] == true
+                                  LetterPasiing['حرف الحاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -454,16 +435,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط­",
+                                      "ح",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط­ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الحاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط­ط§ط،'] == true
+                                  LetterPasiing['حرف الحاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -474,7 +453,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط­ط§ط،'] == true
+                      LetterPasiing['حرف الحاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -490,16 +469,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط®",
+                                      "خ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط®ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الخاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط®ط§ط،'] == true
+                                  LetterPasiing['حرف الخاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -519,16 +496,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط®",
+                                      "خ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط®ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الخاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط®ط§ط،'] == true
+                                  LetterPasiing['حرف الخاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -539,7 +514,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط®ط§ط،'] == true
+                      LetterPasiing['حرف الخاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -555,16 +530,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¯",
+                                      "د",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¯ط§ظ„'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الدال'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¯ط§ظ„'] == true
+                                  LetterPasiing['حرف الدال'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -584,16 +557,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¯",
+                                      "د",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¯ط§ظ„'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الدال'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¯ط§ظ„'] == true
+                                  LetterPasiing['حرف الدال'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -604,7 +575,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط¯ط§ظ„'] == true
+                      LetterPasiing['حرف الدال'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -620,16 +591,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط°",
+                                      "ذ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط°ط§ظ„'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الذال'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط°ط§ظ„'] == true
+                                  LetterPasiing['حرف الذال'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -649,16 +618,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط°",
+                                      "ذ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط°ط§ظ„'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الذال'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط°ط§ظ„'] == true
+                                  LetterPasiing['حرف الذال'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -669,7 +636,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط°ط§ظ„'] == true
+                      LetterPasiing['حرف الذال'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -685,16 +652,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط±",
+                                      "ر",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط±ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الراء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط±ط§ط،'] == true
+                                  LetterPasiing['حرف الراء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -714,16 +679,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط±",
+                                      "ر",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط±ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الراء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط±ط§ط،'] == true
+                                  LetterPasiing['حرف الراء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -734,7 +697,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط±ط§ط،'] == true
+                      LetterPasiing['حرف الراء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -750,16 +713,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط²",
+                                      "ز",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط²ط§ظٹ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الزاي'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط²ط§ظٹ'] == true
+                                  LetterPasiing['حرف الزاي'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -779,16 +740,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط²",
+                                      "ز",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط²ط§ظٹ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الزاي'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط²ط§ظٹ'] == true
+                                  LetterPasiing['حرف الزاي'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -799,7 +758,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط²ط§ظٹ'] == true
+                      LetterPasiing['حرف الزاي'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -815,16 +774,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط³",
+                                      "س",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط³ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف السين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط³ظٹظ†'] == true
+                                  LetterPasiing['حرف السين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -844,16 +801,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط³",
+                                      "س",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط³ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف السين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط³ظٹظ†'] == true
+                                  LetterPasiing['حرف السين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -864,7 +819,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط³ظٹظ†'] == true
+                      LetterPasiing['حرف السين'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -880,16 +835,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط´",
+                                      "ش",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط´ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الشين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط´ظٹظ†'] == true
+                                  LetterPasiing['حرف الشين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -909,16 +862,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط´",
+                                      "ش",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط´ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الشين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط´ظٹظ†'] == true
+                                  LetterPasiing['حرف الشين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -929,7 +880,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط´ظٹظ†'] == true
+                      LetterPasiing['حرف الشين'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -945,16 +896,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "طµ",
+                                      "ص",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„طµط§ط¯'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الصاد'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„طµط§ط¯'] == true
+                                  LetterPasiing['حرف الصاد'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -974,16 +923,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "طµ",
+                                      "ص",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„طµط§ط¯'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الصاد'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„طµط§ط¯'] == true
+                                  LetterPasiing['حرف الصاد'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -995,7 +942,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                               ),
                             ),
 
-                      LetterPasiing['ط­ط±ظپ ط§ظ„طµط§ط¯'] == true
+                      LetterPasiing['حرف الصاد'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1011,16 +958,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¶",
+                                      "ض",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¶ط§ط¯'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الضاد'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¶ط§ط¯'] == true
+                                  LetterPasiing['حرف الضاد'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1040,16 +985,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¶",
+                                      "ض",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¶ط§ط¯'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الضاد'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¶ط§ط¯'] == true
+                                  LetterPasiing['حرف الضاد'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1060,7 +1003,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط¶ط§ط¯'] == true
+                      LetterPasiing['حرف الضاد'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1076,16 +1019,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط·",
+                                      "ط",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط·ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الطاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط·ط§ط،'] == true
+                                  LetterPasiing['حرف الطاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1105,16 +1046,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط·",
+                                      "ط",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط·ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الطاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط·ط§ط،'] == true
+                                  LetterPasiing['حرف الطاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1125,7 +1064,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط·ط§ط،'] == true
+                      LetterPasiing['حرف الطاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1141,16 +1080,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¸",
+                                      "ظ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¸ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الظاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¸ط§ط،'] == true
+                                  LetterPasiing['حرف الظاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1170,16 +1107,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¸",
+                                      "ظ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¸ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الظاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¸ط§ط،'] == true
+                                  LetterPasiing['حرف الظاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1190,7 +1125,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط¸ط§ط،'] == true
+                      LetterPasiing['حرف الظاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1206,16 +1141,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¹",
+                                      "ع",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¹ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف العين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¹ظٹظ†'] == true
+                                  LetterPasiing['حرف العين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1235,16 +1168,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط¹",
+                                      "ع",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط¹ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف العين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط¹ظٹظ†'] == true
+                                  LetterPasiing['حرف العين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1255,7 +1186,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط¹ظٹظ†'] == true
+                      LetterPasiing['حرف العين'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1271,16 +1202,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط؛",
+                                      "غ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط؛ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الغين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط؛ظٹظ†'] == true
+                                  LetterPasiing['حرف الغين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1300,16 +1229,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ط؛",
+                                      "غ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ط؛ظٹظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الغين'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ط؛ظٹظ†'] == true
+                                  LetterPasiing['حرف الغين'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1320,7 +1247,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ط؛ظٹظ†'] == true
+                      LetterPasiing['حرف الغين'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1336,16 +1263,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظپ",
+                                      "ف",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظپط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الفاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظپط§ط،'] == true
+                                  LetterPasiing['حرف الفاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1365,16 +1290,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظپ",
+                                      "ف",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظپط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الفاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظپط§ط،'] == true
+                                  LetterPasiing['حرف الفاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1385,7 +1308,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظپط§ط،'] == true
+                      LetterPasiing['حرف الفاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1401,16 +1324,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ‚",
+                                      "ق",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ‚ط§ظپ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف القاف'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ‚ط§ظپ'] == true
+                                  LetterPasiing['حرف القاف'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1430,16 +1351,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ‚",
+                                      "ق",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ‚ط§ظپ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف القاف'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ‚ط§ظپ'] == true
+                                  LetterPasiing['حرف القاف'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1450,7 +1369,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظ‚ط§ظپ'] == true
+                      LetterPasiing['حرف القاف'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1466,16 +1385,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظƒ",
+                                      "ك",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظƒط§ظپ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الكاف'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظƒط§ظپ'] == true
+                                  LetterPasiing['حرف الكاف'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1495,16 +1412,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظƒ",
+                                      "ك",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظƒط§ظپ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الكاف'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظƒط§ظپ'] == true
+                                  LetterPasiing['حرف الكاف'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1515,7 +1430,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظƒط§ظپ'] == true
+                      LetterPasiing['حرف الكاف'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1531,16 +1446,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ„",
+                                      "ل",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ„ط§ظ…'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف اللام'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ„ط§ظ…'] == true
+                                  LetterPasiing['حرف اللام'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1560,16 +1473,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ„",
+                                      "ل",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ„ط§ظ…'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف اللام'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ„ط§ظ…'] == true
+                                  LetterPasiing['حرف اللام'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1580,7 +1491,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظ„ط§ظ…'] == true
+                      LetterPasiing['حرف اللام'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1596,16 +1507,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ…",
+                                      "م",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ…ظٹظ…'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الميم'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ…ظٹظ…'] == true
+                                  LetterPasiing['حرف الميم'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1625,16 +1534,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ…",
+                                      "م",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ…ظٹظ…'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الميم'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ…ظٹظ…'] == true
+                                  LetterPasiing['حرف الميم'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1645,7 +1552,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظ…ظٹظ…'] == true
+                      LetterPasiing['حرف الميم'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1661,16 +1568,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ†",
+                                      "ن",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ†ظˆظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف النون'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ†ظˆظ†'] == true
+                                  LetterPasiing['حرف النون'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1690,16 +1595,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ†",
+                                      "ن",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ†ظˆظ†'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف النون'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ†ظˆظ†'] == true
+                                  LetterPasiing['حرف النون'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1710,7 +1613,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظ†ظˆظ†'] == true
+                      LetterPasiing['حرف النون'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1726,16 +1629,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ‡ظ€",
+                                      "هـ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ‡ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الهاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ‡ط§ط،'] == true
+                                  LetterPasiing['حرف الهاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1755,16 +1656,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظ‡ظ€",
+                                      "هـ",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظ‡ط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الهاء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظ‡ط§ط،'] == true
+                                  LetterPasiing['حرف الهاء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1775,7 +1674,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظ‡ط§ط،'] == true
+                      LetterPasiing['حرف الهاء'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1791,16 +1690,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظˆ",
+                                      "و",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظˆط§ظˆ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الواو'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظˆط§ظˆ'] == true
+                                  LetterPasiing['حرف الواو'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1820,16 +1717,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظˆ",
+                                      "و",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظˆط§ظˆ'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الواو'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظˆط§ظˆ'] == true
+                                  LetterPasiing['حرف الواو'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1840,7 +1735,7 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 ],
                               ),
                             ),
-                      LetterPasiing['ط­ط±ظپ ط§ظ„ظˆط§ظˆ'] == true
+                      LetterPasiing['حرف الواو'] == true
                           ? GestureDetector(
                               onTap: () {
                                 Navigator.push(
@@ -1855,16 +1750,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     width: 80,
                                     decoration: boxDecoration,
                                     child: Text(
-                                      "ظٹ",
+                                      "ي",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظٹط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الياء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظٹط§ط،'] == true
+                                  LetterPasiing['حرف الياء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,
@@ -1884,16 +1777,14 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                     decoration: boxDecoration,
                                     padding: const EdgeInsets.all(1),
                                     child: Text(
-                                      "ظٹ",
+                                      "ي",
                                       textAlign: TextAlign.center,
-                                      style:
-                                          LetterPasiing['ط­ط±ظپ ط§ظ„ظٹط§ط،'] ==
-                                                  true
-                                              ? PassedtextStyle
-                                              : textStyle,
+                                      style: LetterPasiing['حرف الياء'] == true
+                                          ? PassedtextStyle
+                                          : textStyle,
                                     ),
                                   ),
-                                  LetterPasiing['ط­ط±ظپ ط§ظ„ظٹط§ط،'] == true
+                                  LetterPasiing['حرف الياء'] == true
                                       ? Positioned(
                                           top: -2,
                                           left: 0,

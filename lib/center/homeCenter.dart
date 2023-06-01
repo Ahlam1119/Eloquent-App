@@ -100,9 +100,10 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
     }
 
     // تحديد اسم الكولكشن
+    // الحصول على الأخصائي الأكثر تفاعلاً
     final CollectionReference acceptedSessionsCollection =
         FirebaseFirestore.instance.collection('acceptedSessions');
-    // الحصول على الأخصائي الأكثر تفاعلاً
+
     QuerySnapshot attendedSessions = await acceptedSessionsCollection
         .where('centerid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
         .where('TherapistStatus', isEqualTo: 'attandend')

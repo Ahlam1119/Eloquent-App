@@ -277,6 +277,7 @@ class _preivouseSessionState extends State<preivouseSession> {
                                                         SizedBox(height: 10),
                                                         Center(
                                                           child:
+                                                              //تقيم الجلسة
                                                               RatingBar.builder(
                                                             unratedColor:
                                                                 Color.fromARGB(
@@ -334,7 +335,6 @@ class _preivouseSessionState extends State<preivouseSession> {
                                                               ),
                                                               hintText:
                                                                   "اكتب تعليقك هنا",
-
                                                               filled:
                                                                   true, // set filled to true
                                                               fillColor: Color

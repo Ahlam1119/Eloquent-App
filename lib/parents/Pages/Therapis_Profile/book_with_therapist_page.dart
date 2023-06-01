@@ -288,7 +288,7 @@ class _BottomModalSheetInfo extends StatelessWidget {
     required this.centerid,
   });
 
-  Future<void> saveDoc() async {
+  Future<void> AddSessiondetailsToFirebase() async {
     late final String parentName;
     await FirebaseFirestore.instance
         .collection('Parent')
@@ -414,6 +414,8 @@ class _BottomModalSheetInfo extends StatelessWidget {
                           child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Color(0xff394445)),
+
+                              // Ask for New Session
                               onPressed: () async {
                                 final Parent = FirebaseFirestore.instance
                                     .collection('Parent');
@@ -428,7 +430,7 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                         .collection('acceptedSessions');
                                 late String date1 =
                                     '${date.day}/${date.month}/${date.year}';
-// Check if the mother has a requested session in progress
+                                // Check if the Parent has a requested session in progress
                                 final requestedSessionQuery =
                                     requestedSessionsCollection
                                         .where('ParentId',
@@ -441,7 +443,6 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                           'Date',
                                           isEqualTo: date1,
                                         );
-
                                 final requestedSessionSnapshot =
                                     await requestedSessionQuery.get();
 
@@ -463,21 +464,22 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                               "عند قبول الأخصائي للجسلة، سوف تضاف جلستك الى قائمة الجلسات القادمة"),
                                           actions: [
                                             TextButton(
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                                Navigator.of(context).pop();
-                                              },
-                                              child: const Text('حسناً'),
-                                            ),
+                                                onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                  Navigator.of(context).pop();
+                                                },
+                                                child: const Text('حسناً')),
                                           ],
                                         ),
                                       ),
                                     ),
                                   );
-                                } else {
+                                }
+
+                                // Check if the mother is trying to book a session at the same time as a previously requested session
+                                else {
                                   late String date1 =
                                       '${date.day}/${date.month}/${date.year}';
-                                  // Check if the mother is trying to book a session at the same time as a previously accepted session
                                   final requestedSessionQuery =
                                       requestedSessionsCollection
                                           .where('ParentId',
@@ -489,10 +491,8 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                             'Date',
                                             isEqualTo: date1,
                                           );
-
                                   final proposedSessionSnapshot =
                                       await requestedSessionQuery.get();
-
                                   if (proposedSessionSnapshot.docs.isNotEmpty) {
                                     await showDialog(
                                       context: context,
@@ -521,10 +521,12 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                         ),
                                       ),
                                     );
-                                  } else {
+                                  }
+                                  // Check if the Parent is trying to book a session at the same time as a previously accepted session
+                                  else {
                                     late String date1 =
                                         '${date.day}/${date.month}/${date.year}';
-                                    // Check if the mother is trying to book a session at the same time as a previously accepted session
+
                                     final proposedSessionQuery =
                                         acceptedSessionsCollection
                                             .where('ParentId',
@@ -532,16 +534,12 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                                     .instance.currentUser!.uid)
                                             .where('TherapistStatus',
                                                 isEqualTo: 'accepted')
-                                            // .where('timeRange',
-                                            //     isEqualTo: timeRange)
                                             .where(
                                               'Date',
                                               isEqualTo: date1,
                                             );
-
                                     final proposedSessionSnapshot =
                                         await proposedSessionQuery.get();
-
                                     if (proposedSessionSnapshot
                                         .docs.isNotEmpty) {
                                       await showDialog(
@@ -572,9 +570,11 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                           ),
                                         ),
                                       );
-                                    } else {
-                                      await saveDoc();
+                                    }
 
+                                    // Ask for New Session
+                                    else {
+                                      await AddSessiondetailsToFirebase();
                                       await showDialog(
                                         context: context,
                                         builder: (context) => Theme(
