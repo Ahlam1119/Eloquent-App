@@ -1337,6 +1337,13 @@ class _ChildFileState extends State<ChildFile> {
                                                         ? textStyleNo
                                                         : textStyleYesy),
                                               ),
+                                              checkUp == 'نعم'
+                                                  ? SizedBox(
+                                                      width: 1,
+                                                    )
+                                                  : SizedBox(
+                                                      width: 12,
+                                                    ),
                                               Visibility(
                                                 visible: checkUp == 'نعم',
                                                 child: Checkbox(
@@ -1408,7 +1415,7 @@ class _ChildFileState extends State<ChildFile> {
                                                       width: 135,
                                                     )
                                                   : SizedBox(
-                                                      width: 140,
+                                                      width: 148,
                                                     ),
                                               Visibility(
                                                 visible: Surgery == 'نعم',
@@ -1484,7 +1491,7 @@ class _ChildFileState extends State<ChildFile> {
                                                       width: 129,
                                                     )
                                                   : SizedBox(
-                                                      width: 135,
+                                                      width: 146,
                                                     ),
                                               Visibility(
                                                 visible: DefiningIntelligence ==
@@ -1562,7 +1569,7 @@ class _ChildFileState extends State<ChildFile> {
                                                       width: 60,
                                                     )
                                                   : SizedBox(
-                                                      width: 66,
+                                                      width: 79,
                                                     ),
                                               Visibility(
                                                 visible: sensitive == 'نعم',

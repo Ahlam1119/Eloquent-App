@@ -268,118 +268,7 @@ class _MTherapistState extends State<MTherapist> {
                                             IconButton(
                                               icon: Icon(Icons.edit),
                                               onPressed: () {
-                                                showDialog(
-                                                  context: context,
-                                                  barrierDismissible: false,
-                                                  builder:
-                                                      (BuildContext context) {
-                                                    return AlertDialog(
-                                                      insetPadding:
-                                                          const EdgeInsets.all(
-                                                              0),
-                                                      backgroundColor:
-                                                          Colors.transparent,
-                                                      content: Container(
-                                                        height: 140,
-                                                        width: 300,
-                                                        child: Container(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                      .only(
-                                                                  top: 20,
-                                                                  right: 10,
-                                                                  left: 10),
-                                                          decoration: BoxDecoration(
-                                                              color:
-                                                                  Colors.white,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          15)),
-                                                          child: Column(
-                                                            children: [
-                                                              Text(
-                                                                'هل انت متأكد من رغبتك في حذف الحساب ؟ ',
-                                                                style: const TextStyle(
-                                                                    fontSize:
-                                                                        16,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold),
-                                                              ),
-                                                              SizedBox(
-                                                                height: 7,
-                                                              ),
-                                                              Container(
-                                                                padding:
-                                                                    const EdgeInsets
-                                                                            .only(
-                                                                        top: 15,
-                                                                        bottom:
-                                                                            10),
-                                                                child: Row(
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .center,
-                                                                    children: [
-                                                                      SizedBox(
-                                                                        height:
-                                                                            45,
-                                                                        width:
-                                                                            120,
-                                                                        child:
-                                                                            Material(
-                                                                          color: Colors
-                                                                              .red
-                                                                              .shade900,
-                                                                          shape:
-                                                                              RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)),
-                                                                          child: MaterialButton(
-                                                                              onPressed: () {
-                                                                                _update(documentSnapshot);
-                                                                                Navigator.of(context).pop();
-                                                                              },
-                                                                              child: const Text(
-                                                                                "حذف الحساب",
-                                                                                style: TextStyle(fontSize: 16, color: Colors.white),
-                                                                              )),
-                                                                        ),
-                                                                      ),
-                                                                      const SizedBox(
-                                                                        width:
-                                                                            15,
-                                                                      ),
-                                                                      SizedBox(
-                                                                        height:
-                                                                            45,
-                                                                        width:
-                                                                            120,
-                                                                        child:
-                                                                            Material(
-                                                                          color:
-                                                                              Colors.black,
-                                                                          shape:
-                                                                              RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)),
-                                                                          child: MaterialButton(
-                                                                              splashColor: Colors.white,
-                                                                              onPressed: () {
-                                                                                Navigator.of(context).pop();
-                                                                              },
-                                                                              child: const Text(
-                                                                                "إلغاء",
-                                                                                style: TextStyle(fontSize: 16, color: Colors.white),
-                                                                              )),
-                                                                        ),
-                                                                      ),
-                                                                    ]),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
-                                                );
+                                                _update(documentSnapshot);
                                               },
                                             ),
                                             SizedBox(width: 1),
@@ -834,6 +723,7 @@ class _MTherapistState extends State<MTherapist> {
                     ),
 
 //طلبات الاخصائيين
+
                     StreamBuilder(
                       stream: FirebaseFirestore.instance
                           .collection('Therapist')
@@ -938,6 +828,8 @@ class _MTherapistState extends State<MTherapist> {
                                           ['name'],
                                       TherapistAvatar: streamSnapshot
                                           .data!.docs[index]['TherapistAvatar'],
+                                      GeneralInfo: streamSnapshot
+                                          .data!.docs[index]['GeneralInfo'],
                                       onAccept: () async {
                                         CollectionReference temp =
                                             FirebaseFirestore.instance
@@ -1000,8 +892,6 @@ class _MTherapistState extends State<MTherapist> {
                                                   .pop();
                                             });
                                       },
-                                      GeneralInfo: streamSnapshot
-                                          .data!.docs[index]['GeneralInfo'],
                                     );
                                   },
                                 );

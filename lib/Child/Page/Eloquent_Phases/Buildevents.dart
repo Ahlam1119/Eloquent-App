@@ -1,11 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/firstEvent.dart';
-import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/fourthEvent.dart';
-import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/secondEvent.dart';
-import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/thirdEvent.dart';
+
+import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/fourthStory/firstEvent.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/secStory/firstEventSec.dart';
-import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildingconcepts.dart';
+import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/thirdStory/firstEvent.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/EloquentPhasesPage.dart';
 import 'package:flutter/material.dart';
 
@@ -309,8 +307,8 @@ class _BuildeventsState extends State<Buildevents> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              thirdEvent(childId: ChildID, page: 'thirdEvent'),
+                          builder: (context) => firstEventThird(
+                              childId: ChildID, page: 'thirdEvent'),
                         ));
                   },
                   child: Container(
@@ -380,7 +378,7 @@ class _BuildeventsState extends State<Buildevents> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => fourthEvent(
+                          builder: (context) => firstEventFourth(
                               childId: ChildID, page: 'fourthEvent'),
                         ));
                   },

@@ -19,8 +19,10 @@ class _ChildrenListState extends State<ChildrenList> {
         .collection('acceptedSessions')
         .where('TherapistID', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
         .get()
-        .then((value) =>
-            value.docs.map((doc) => doc.data()['ChildID'] as String).toList());
+        .then((value) => value.docs
+            .map((doc) => doc.data()['ChildID'] as String)
+            .toSet()
+            .toList());
   }
 
   @override

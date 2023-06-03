@@ -48,7 +48,7 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
   getUserData() async {
     await FirebaseFirestore.instance
         .collection('center')
-        .where("uid", isEqualTo: singedInUser?.uid)
+        .where("uid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
         .get()
         .then((v) {
       for (var element in v.docs) {

@@ -275,6 +275,25 @@ class _upcomingState extends State<upcoming> {
                                 ),
                                 ElevatedButton(
                                   onPressed: () async {
+                                    Map<String, dynamic> SessionDocument = {};
+                                    await FirebaseFirestore.instance
+                                        .collection('acceptedSessions')
+                                        .where("TherapistID",
+                                            isEqualTo: singedInUser.uid)
+                                        .where('sessionID',
+                                            isEqualTo:
+                                                documentSnapshot['sessionID'])
+                                        .get()
+                                        .then((v) {
+                                      for (var element in v.docs) {
+                                        SessionDocument.addAll(element.data());
+                                      }
+                                    });
+
+                                    late String SessionN =
+                                        SessionDocument['SessionName'];
+                                    late String SessionG =
+                                        SessionDocument['SessionGoul'];
                                     showModalBottomSheet(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
@@ -334,7 +353,7 @@ class _upcomingState extends State<upcoming> {
                                                               controller:
                                                                   TextEditingController(
                                                                       text:
-                                                                          Sessionname),
+                                                                          SessionN),
                                                               onChanged:
                                                                   ((value) {
                                                                 Sessionname =
@@ -468,7 +487,7 @@ class _upcomingState extends State<upcoming> {
                                                               controller:
                                                                   TextEditingController(
                                                                       text:
-                                                                          SessionGoal),
+                                                                          SessionG),
                                                               onChanged:
                                                                   ((value) {
                                                                 SessionGoal =
@@ -748,7 +767,7 @@ class _upcomingState extends State<upcoming> {
                                                                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                               children: [
                                                                                 Container(
-                                                                                  width: 120,
+                                                                                  width: 100,
                                                                                   child: TextButton(
                                                                                     style: TextButton.styleFrom(
                                                                                         backgroundColor: Color(0xff394445),

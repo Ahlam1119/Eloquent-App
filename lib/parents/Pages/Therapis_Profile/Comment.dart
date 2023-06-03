@@ -76,6 +76,9 @@ class _CommentPageState extends State<CommentPage> {
                                               documentSnapshot['ParentAvatar']),
                                         ),
                                       ),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
                                       Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
@@ -97,7 +100,7 @@ class _CommentPageState extends State<CommentPage> {
                                                 ),
                                               ),
                                               SizedBox(
-                                                width: 80,
+                                                width: 90,
                                               ),
                                               RatingBar.builder(
                                                 itemSize: 16,

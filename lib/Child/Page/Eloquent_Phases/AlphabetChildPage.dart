@@ -120,7 +120,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => A_sound(),
+                                builder: (context) =>
+                                    A_sound(childId: ChildID, page: 'A_sound'),
                               ));
                         },
                         child: Stack(
@@ -153,7 +154,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => B_sound(),
+                                      builder: (context) => B_sound(
+                                          childId: ChildID, page: 'B_sound'),
                                     ));
                               },
                               child: Stack(
@@ -215,7 +217,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => T_sound(),
+                                      builder: (context) => T_sound(
+                                          childId: ChildID, page: 'T_sound'),
                                     ));
                               },
                               child: Stack(
@@ -276,7 +279,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => TT_sound(),
+                                      builder: (context) => TT_sound(
+                                          childId: ChildID, page: 'TT_sound'),
                                     ));
                               },
                               child: Stack(
@@ -337,7 +341,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => J_sound(),
+                                      builder: (context) => J_sound(
+                                          childId: ChildID, page: 'J_sound'),
                                     ));
                               },
                               child: Stack(
@@ -398,7 +403,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => HH_sound(),
+                                      builder: (context) => HH_sound(
+                                          childId: ChildID, page: 'HH_sound'),
                                     ));
                               },
                               child: Stack(
@@ -459,7 +465,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => kh_sound(),
+                                      builder: (context) => kh_sound(
+                                          childId: ChildID, page: 'kh_sound'),
                                     ));
                               },
                               child: Stack(
@@ -520,7 +527,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => D_sound(),
+                                      builder: (context) => D_sound(
+                                          childId: ChildID, page: 'D_sound'),
                                     ));
                               },
                               child: Stack(
@@ -581,7 +589,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => TH_sound(),
+                                      builder: (context) => TH_sound(
+                                          childId: ChildID, page: 'TH_sound'),
                                     ));
                               },
                               child: Stack(
@@ -642,7 +651,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => R_sound(),
+                                      builder: (context) => R_sound(
+                                          childId: ChildID, page: 'R_sound'),
                                     ));
                               },
                               child: Stack(
@@ -703,7 +713,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Z_sound(),
+                                      builder: (context) => Z_sound(
+                                          childId: ChildID, page: 'Z_sound'),
                                     ));
                               },
                               child: Stack(
@@ -764,7 +775,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => S_sound(),
+                                      builder: (context) => S_sound(
+                                          childId: ChildID, page: 'S_sound'),
                                     ));
                               },
                               child: Stack(
@@ -886,7 +898,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => SS_sound(),
+                                      builder: (context) => SS_sound(
+                                          childId: ChildID, page: 'SS_sound'),
                                     ));
                               },
                               child: Stack(
@@ -948,7 +961,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Dha_sound(),
+                                      builder: (context) => Dha_sound(
+                                          childId: ChildID, page: 'Dha_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1009,7 +1023,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Ta_sound(),
+                                      builder: (context) => Ta_sound(
+                                          childId: ChildID, page: 'Ta_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1070,7 +1085,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => DDa_sound(),
+                                      builder: (context) => DDa_sound(
+                                          childId: ChildID, page: 'DDa_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1131,7 +1147,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => E_sound(),
+                                      builder: (context) => E_sound(
+                                          childId: ChildID, page: 'E_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1192,7 +1209,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => EE_sound(),
+                                      builder: (context) => EE_sound(
+                                          childId: ChildID, page: 'EE_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1253,7 +1271,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => F_sound(),
+                                      builder: (context) => F_sound(
+                                          childId: ChildID, page: 'F_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1314,7 +1333,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Q_sound(),
+                                      builder: (context) => Q_sound(
+                                          childId: ChildID, page: 'Q_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1375,7 +1395,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => K_sound(),
+                                      builder: (context) => K_sound(
+                                          childId: ChildID, page: 'K_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1436,7 +1457,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => L_sound(),
+                                      builder: (context) => L_sound(
+                                          childId: ChildID, page: 'L_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1497,7 +1519,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => M_sound(),
+                                      builder: (context) => M_sound(
+                                          childId: ChildID, page: 'M_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1558,7 +1581,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => N_sound(),
+                                      builder: (context) => N_sound(
+                                          childId: ChildID, page: 'N_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1619,7 +1643,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => H_sound(),
+                                      builder: (context) => H_sound(
+                                          childId: ChildID, page: 'H_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1680,7 +1705,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => W_sound(),
+                                      builder: (context) => W_sound(
+                                          childId: ChildID, page: 'W_sound'),
                                     ));
                               },
                               child: Stack(
@@ -1741,7 +1767,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => Y_sound(),
+                                      builder: (context) => Y_sound(
+                                          childId: ChildID, page: 'Y_sound'),
                                     ));
                               },
                               child: Stack(

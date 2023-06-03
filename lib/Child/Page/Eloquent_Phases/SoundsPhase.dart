@@ -177,7 +177,7 @@ class _SoundsPhasePageState extends State<SoundsPhasePage> {
                         ),
                         SizedBox(height: 10),
                         AlphabetChildPage(
-                          ChildID: "",
+                          ChildID: ChildID,
                         ),
                       ],
                     ),

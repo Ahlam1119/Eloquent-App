@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/secondEvent.dart';
-import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildingconcepts.dart';
 import 'package:flutter/material.dart';
 
 class firstEvent extends StatefulWidget {

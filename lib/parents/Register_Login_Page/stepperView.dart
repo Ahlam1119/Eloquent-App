@@ -24,13 +24,13 @@ class _stepperViewState extends State<stepperView> {
   String? _errorMessage;
   late String _name;
   late String ParentAvatar = '';
-  late final String chronicdiseasesOtherField;
-  late final String CheckupsYesField;
-  late final String SurgeryYesField;
-  late final String IntelligencetestYesField;
-  late final String allergyYesField;
+  late String chronicdiseasesOtherField;
+  late String CheckupsYesField;
+  late String SurgeryYesField;
+  late String IntelligencetestYesField;
+  late String allergyYesField;
   var _previoustreatmentYes;
-  late final String previoustreatmentYesField;
+  late String previoustreatmentYesField;
   var _previoustreatmentNo;
 /*----------------------------------*/
   late String ChildAvatar = '';

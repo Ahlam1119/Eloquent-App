@@ -43,18 +43,20 @@ class _CenterProfileState extends State<CenterProfile> {
   bool isLoded = true;
   //get all user data and store to Map
   getUserData() async {
-    await FirebaseFirestore.instance
-        .collection('center')
-        .where("uid", isEqualTo: singedInUser?.uid)
-        .get()
-        .then((v) {
-      for (var element in v.docs) {
-        CenterInfo.addAll(element.data());
-        setState(() {
-          isLoded = false;
-        });
-      }
-    });
+    try {
+      QuerySnapshot centerSnapshot = await FirebaseFirestore.instance
+          .collection('center')
+          .where("uid", isEqualTo: singedInUser?.uid)
+          .get();
+      centerSnapshot.docs.forEach((element) {
+        CenterInfo.addAll(element.data() as Map<String, dynamic>);
+      });
+      setState(() {
+        isLoded = false;
+      });
+    } catch (e) {
+      print("Error getting user data: $e");
+    }
   }
 
   static final FirebaseFirestore _db = FirebaseFirestore.instance;

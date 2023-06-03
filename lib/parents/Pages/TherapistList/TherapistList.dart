@@ -159,7 +159,7 @@ class _TherapistListState extends State<TherapistList> {
                   ),
                 ),
                 SizedBox(
-                  width: 10,
+                  width: 6,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -215,22 +215,25 @@ class _TherapistListState extends State<TherapistList> {
             ),
             Row(
               children: [
-                Container(
-                    padding: EdgeInsets.only(right: 60),
-                    child: Image.asset("images/CenterName.png")),
-                SizedBox(
-                  width: 2,
-                ),
-                Text(
-                  documentSnapshot['centerName'],
-                  style: TextStyle(
-                    color: Color(0xff687c71),
-                    fontSize: 11,
+                Padding(
+                  padding: const EdgeInsets.only(right: 40),
+                  child: Row(
+                    children: [
+                      Image.asset("images/CenterName.png"),
+                      SizedBox(
+                        width: 2,
+                      ),
+                      Text(
+                        documentSnapshot['centerName'],
+                        style: TextStyle(
+                          color: Color(0xff687c71),
+                          fontSize: 11,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  width: 85,
-                ),
+                Spacer(),
                 FutureBuilder(
                   future: FirebaseFirestore.instance
                       .collection(

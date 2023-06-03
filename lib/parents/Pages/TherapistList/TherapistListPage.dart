@@ -8,11 +8,11 @@ class TherapistListPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: EdgeInsets.symmetric(horizontal: 8),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Padding(
-              padding: const EdgeInsets.only(top: 10),
+              padding: const EdgeInsets.only(top: 10, right: 10),
               child: Text(
                 'قائمة الأخصائيين',
                 style: TextStyle(
@@ -23,12 +23,15 @@ class TherapistListPage extends StatelessWidget {
                 ),
               ),
             ),
-            Text(
-              textAlign: TextAlign.right,
-              'أحجز جلسة لطفلك الآن\nمع احد المختصين',
-              style: TextStyle(
-                color: Color(0xff9bb0a5),
-                fontSize: 14,
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Text(
+                textAlign: TextAlign.right,
+                'أحجز جلسة لطفلك الآن\nمع احد المختصين',
+                style: TextStyle(
+                  color: Color(0xff9bb0a5),
+                  fontSize: 14,
+                ),
               ),
             ),
             SizedBox(

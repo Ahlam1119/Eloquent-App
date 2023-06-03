@@ -311,7 +311,7 @@ class _BuildingconceptsState extends State<Buildingconcepts> {
                                                 color: Color(0xffeef1f4),
                                               ),
                                               child: Image.asset(
-                                                  "images/hair.png")),
+                                                  "images/Hair.png")),
                                         ),
                                       )
                                     ],
