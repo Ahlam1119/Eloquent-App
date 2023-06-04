@@ -6,6 +6,7 @@ import 'package:uuid/uuid.dart';
 import '../screens/constants.dart';
 import '../screens/welcome.dart';
 import 'frequentQuestionsCenter.dart';
+import 'center_information.dart';
 
 class CenterProfile extends StatefulWidget {
   const CenterProfile({super.key});
@@ -24,39 +25,24 @@ class _CenterProfileState extends State<CenterProfile> {
   void initState() {
     super.initState();
     final user = _auth.currentUser;
-    getCurrentUser();
     getUserData();
-  }
-
-  void getCurrentUser() {
-    try {
-      final user = _auth.currentUser;
-      if (user != null) {
-        singedInUser = user;
-      }
-    } catch (e) {
-      print(e);
-    }
   }
 
   Map<String, dynamic> CenterInfo = {};
   bool isLoded = true;
-  //get all user data and store to Map
   getUserData() async {
-    try {
-      QuerySnapshot centerSnapshot = await FirebaseFirestore.instance
-          .collection('center')
-          .where("uid", isEqualTo: singedInUser?.uid)
-          .get();
-      centerSnapshot.docs.forEach((element) {
-        CenterInfo.addAll(element.data() as Map<String, dynamic>);
-      });
-      setState(() {
-        isLoded = false;
-      });
-    } catch (e) {
-      print("Error getting user data: $e");
-    }
+    await FirebaseFirestore.instance
+        .collection('center')
+        .where("uid", isEqualTo: CenterInformation.uid)
+        .get()
+        .then((v) {
+      for (var element in v.docs) {
+        CenterInfo.addAll(element.data());
+        setState(() {
+          isLoded = false;
+        });
+      }
+    });
   }
 
   static final FirebaseFirestore _db = FirebaseFirestore.instance;

@@ -238,7 +238,7 @@ class _TherapistProfileState extends State<TherapistProfile> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      frequentQuestions()));
+                                                      frequentQuestionsTH()));
                                         }),
                                         child: Card(
                                           elevation: 4,

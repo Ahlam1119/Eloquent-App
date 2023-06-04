@@ -21,6 +21,8 @@ class _MParentState extends State<MParent> {
   //step one for streem bulider
   final CollectionReference _Parent =
       FirebaseFirestore.instance.collection('Parent');
+  final CollectionReference _Child =
+      FirebaseFirestore.instance.collection('Child');
   AddData({
     required String ParentID,
     required String name,
@@ -585,9 +587,21 @@ class _MParentState extends State<MParent> {
         });
   }
 
-  Future<void> _delete(String center) async {
-    await _Parent.doc(center).delete();
+  Future<void> _delete(String uidParent) async {
+    WriteBatch batch = FirebaseFirestore.instance.batch();
 
+    // حذف حساب الأم
+    batch.delete(_Parent.doc(uidParent));
+
+    // الحصول على جميع حسابات الأطفال وحذفها
+    QuerySnapshot childSnapshot =
+        await _Child.where('uidParent', isEqualTo: uidParent).get();
+    childSnapshot.docs.forEach((doc) {
+      batch.delete(doc.reference);
+    });
+
+    // تنفيذ دفعة الحذف
+    await batch.commit();
     ScaffoldMessenger.of(context)
         .showSnackBar(const SnackBar(content: Text('تم حذف الحساب بنجاح')));
   }

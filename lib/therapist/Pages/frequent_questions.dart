@@ -1,12 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class frequentQuestions extends StatefulWidget {
+class frequentQuestionsTH extends StatefulWidget {
   @override
-  State<frequentQuestions> createState() => _frequentQuestionsState();
+  State<frequentQuestionsTH> createState() => _frequentQuestionsTHState();
 }
 
-class _frequentQuestionsState extends State<frequentQuestions> {
+class _frequentQuestionsTHState extends State<frequentQuestionsTH> {
   @override
   void initState() {
     super.initState();
@@ -35,75 +35,69 @@ class _frequentQuestionsState extends State<frequentQuestions> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        foregroundColor: Color(0xff385a4a),
-        elevation: 0,
-        backgroundColor: Color(0xffFBFBFB),
-        title: Align(
-          alignment: Alignment.centerRight,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Text(
-              "الأسئلة الشائعة",
-              textAlign: TextAlign.right,
-              style: TextStyle(
-                color: Color(0xff2a3447),
-                fontSize: 22,
-                fontFamily: "Cairo",
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
-        ),
-        actions: [
-          Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.chevron_right, size: 32.0),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              )
-            ],
-          )
-        ],
-      ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           child: ListView(
             children: [
-              SizedBox(
+              Column(children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "الأسئلة الشائعة  ",
+                        style: TextStyle(
+                          color: Color(0xff385a4a),
+                          fontSize: 20,
+                          fontFamily: "Cairo",
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      IconButton(
+                        icon: const Icon(
+                          Icons.arrow_forward_ios_outlined,
+                        ),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ]),
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0x0c9bb0a5),
+                  color: const Color(0x0c9bb0a5),
                 ),
                 child: Theme(
                   data: ThemeData().copyWith(
                     dividerColor: Colors.transparent,
                   ),
-                  child: ExpansionTile(
-                    iconColor: Color(0xff385a4a),
+                  child: const ExpansionTile(
                     trailing: Icon(
                       Icons.arrow_drop_down,
                       size: 30,
                     ),
-                    leading: Text(
-                      'ماهو بليغ ؟',
-                      textAlign: TextAlign.start,
-                      style: TextStyle(
-                        color: Color(0xff385a4a),
-                        fontSize: 16,
-                        fontFamily: "Cairo",
-                        fontWeight: FontWeight.w700,
+                    backgroundColor: Color(0x0c9bb0a5),
+                    title: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'ماهو بليغ ؟',
+                        textAlign: TextAlign.end,
+                        style: TextStyle(
+                          color: Color(0xff385a4a),
+                          fontSize: 16,
+                          fontFamily: "Cairo",
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
                     ),
-                    title: Text(""),
-                    backgroundColor: Color(0x0c9bb0a5),
                     children: [
                       Divider(
                         indent: 20,
@@ -111,10 +105,10 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                         color: Color.fromARGB(168, 159, 156, 156),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 5),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                         child: Text(
-                          "هو تطبيق إلكتروني يهدف الى مساعدة كل من الوالدين, الاطفال \nوحتى الاخصائيين بتقديم مجموعة من الخصائص المختلفة.",
+                          "هو تطبيق إلكتروني يهدف الى مساعدة كل من الوالدين, الاطفال وحتى \nالاخصائيين بتقديم مجموعة من الخصائص المختلفة.",
                           textAlign: TextAlign.right,
                           style: TextStyle(
                             color: Color(0xff6888a0),
@@ -126,23 +120,23 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0x0c9bb0a5),
+                  color: const Color(0x0c9bb0a5),
                 ),
-                child: ExpansionTile(
-                  iconColor: Color(0xff385a4a),
+                child: const ExpansionTile(
                   trailing: Icon(
                     Icons.arrow_drop_down,
                     size: 30,
                   ),
-                  leading: Text(
-                    'من هي الفئة المستهدفة لاستخدام \nبليغ؟',
-                    textAlign: TextAlign.start,
+                  backgroundColor: Color(0x0c9bb0a5),
+                  title: Text(
+                    textAlign: TextAlign.right,
+                    'من هي الفئة المستهدفة لاستخدام بليغ؟',
                     style: TextStyle(
                       color: Color(0xff385a4a),
                       fontSize: 16,
@@ -150,8 +144,6 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  backgroundColor: Color(0x0c9bb0a5),
-                  title: Text(""),
                   children: [
                     Divider(
                       indent: 20,
@@ -159,8 +151,7 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                       color: Color.fromARGB(168, 159, 156, 156),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
                         "أهالي الأطفال ذوي صعوبات النطق والأطفال, المراكز والأخصائيين",
                         textAlign: TextAlign.right,
@@ -173,32 +164,33 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0x0c9bb0a5),
+                  color: const Color(0x0c9bb0a5),
                 ),
-                child: ExpansionTile(
-                  iconColor: Color(0xff385a4a),
+                child: const ExpansionTile(
                   trailing: Icon(
                     Icons.arrow_drop_down,
                     size: 30,
                   ),
-                  leading: Text(
-                    'كيف يستفيد طفلي من تطبيق بليغ؟',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Color(0xff385a4a),
-                      fontSize: 16,
-                      fontFamily: "Cairo",
-                      fontWeight: FontWeight.w700,
+                  backgroundColor: Color(0x0c9bb0a5),
+                  title: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'هل بليغ يعمل في كل المناطق؟',
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Color(0xff385a4a),
+                        fontSize: 16,
+                        fontFamily: "Cairo",
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
-                  backgroundColor: Color(0x0c9bb0a5),
-                  title: Text(""),
                   children: [
                     Divider(
                       indent: 20,
@@ -206,10 +198,9 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                       color: Color.fromARGB(168, 159, 156, 156),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
-                        "يوفر تطبيق بليغ عدة مراحل تساعد الأطفال ذوي صعوبات النطق, كما يوفر التطبيق أمكانية حجز جلسات مع الأخصائيين",
+                        "يخدم بليغ جميع المراكز من جميع المناطق, يحث انه يقدم الخدمات أون لاين",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color(0xff6888a0),
@@ -220,32 +211,34 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                   ],
                 ),
               ),
-              SizedBox(
+
+              const SizedBox(
                 height: 20,
               ),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0x0c9bb0a5),
+                  color: const Color(0x0c9bb0a5),
                 ),
-                child: ExpansionTile(
-                  iconColor: Color(0xff385a4a),
+                child: const ExpansionTile(
                   trailing: Icon(
                     Icons.arrow_drop_down,
                     size: 30,
                   ),
-                  leading: Text(
-                    'كيف يمكنني انشاء حساب لطفلي؟',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Color(0xff385a4a),
-                      fontSize: 16,
-                      fontFamily: "Cairo",
-                      fontWeight: FontWeight.w700,
+                  backgroundColor: Color(0x0c9bb0a5),
+                  title: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'كيف يمكنني ادارة مواعيدي ؟',
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Color(0xff385a4a),
+                        fontSize: 16,
+                        fontFamily: "Cairo",
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
-                  backgroundColor: Color(0x0c9bb0a5),
-                  title: Text(""),
                   children: [
                     Divider(
                       indent: 20,
@@ -253,10 +246,9 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                       color: Color.fromARGB(168, 159, 156, 156),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
-                        "من خلال الصفحة الرئيسية يمكن انشاء حساب للطفل وتعبئة البيانات",
+                        "من خلال صفحة إدارة الجلسات يمكن عرض طلبات المواعيد والموافقة عليها او رفضها, كما يمكن عرض سجل الجلسات القادمة والسابقة",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color(0xff6888a0),
@@ -267,82 +259,34 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
+              //كيف يمكنني حجز جلسة؟
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0x0c9bb0a5),
+                  color: const Color(0x0c9bb0a5),
                 ),
-                child: ExpansionTile(
-                  iconColor: Color(0xff385a4a),
+                child: const ExpansionTile(
                   trailing: Icon(
                     Icons.arrow_drop_down,
                     size: 30,
                   ),
-                  leading: Text(
-                    'هل يستطيع طفلي البدء من المرحلة \nالثانية؟',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Color(0xff385a4a),
-                      fontSize: 16,
-                      fontFamily: "Cairo",
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
                   backgroundColor: Color(0x0c9bb0a5),
-                  title: Text(""),
-                  children: [
-                    Divider(
-                      indent: 20,
-                      endIndent: 20,
-                      color: Color.fromARGB(168, 159, 156, 156),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Text(
-                          "نعم, يستطيع طفلك البدء من اي مرحلة ",
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            color: Color(0xff6888a0),
-                            fontSize: 13,
-                          ),
-                        ),
+                  title: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      'كيف يمكنني إضافة أوقاتي المتاحة؟',
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Color(0xff385a4a),
+                        fontSize: 16,
+                        fontFamily: "Cairo",
+                        fontWeight: FontWeight.w700,
                       ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color(0x0c9bb0a5),
-                ),
-                child: ExpansionTile(
-                  iconColor: Color(0xff385a4a),
-                  trailing: Icon(
-                    Icons.arrow_drop_down,
-                    size: 30,
-                  ),
-                  leading: Text(
-                    'كيف يمكنني حجز جلسة؟',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Color(0xff385a4a),
-                      fontSize: 16,
-                      fontFamily: "Cairo",
-                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  backgroundColor: Color(0x0c9bb0a5),
-                  title: Text(""),
                   children: [
                     Divider(
                       indent: 20,
@@ -350,60 +294,9 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                       color: Color.fromARGB(168, 159, 156, 156),
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Text(
-                          "يمكنك حجز جلسة مع الاخصائي من خلال قائمة الأخصائيين ",
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                            color: Color(0xff6888a0),
-                            fontSize: 13,
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color(0x0c9bb0a5),
-                ),
-                child: ExpansionTile(
-                  iconColor: Color(0xff385a4a),
-                  trailing: Icon(
-                    Icons.arrow_drop_down,
-                    size: 30,
-                  ),
-                  leading: Text(
-                    'كيف يمكنني الغاء حجز جلسة؟',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      color: Color(0xff385a4a),
-                      fontSize: 16,
-                      fontFamily: "Cairo",
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  backgroundColor: Color(0x0c9bb0a5),
-                  title: Text(""),
-                  children: [
-                    Divider(
-                      indent: 20,
-                      endIndent: 20,
-                      color: Color.fromARGB(168, 159, 156, 156),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
-                        "من خلال البروفايل الخاص بك يمكنك أستعراض الجلسات القادمة ,تفاصيل الجلسة, حذف الجلسة",
+                        " من خلال صفحة ادارة الجلسات يمكن إضافة الأوقات المتاحة والتعديل عليها ",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color(0xff6888a0),
@@ -413,6 +306,9 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                     )
                   ],
                 ),
+              ),
+              const SizedBox(
+                height: 20,
               ),
             ],
           ),

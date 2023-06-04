@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'center_information.dart';
 import 'chart/barGrapgh.dart';
 import 'chart/functionChart.dart';
 
@@ -23,7 +24,7 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
   @override
   void initState() {
     super.initState();
-    getCurrentUser();
+    //getCurrentUser();
     getUserData();
     _getTherapistCount();
     getMostActiveTherapist();
@@ -31,6 +32,7 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
     _getChildrenCount();
   }
 
+/*
   void getCurrentUser() {
     try {
       final user = _auth.currentUser;
@@ -42,13 +44,14 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
       print(singedInUser?.uid);
     }
   }
-
+*/
   Map<String, dynamic> centerData = {};
   bool isLoded = true;
+
   getUserData() async {
     await FirebaseFirestore.instance
         .collection('center')
-        .where("uid", isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+        .where("uid", isEqualTo: CenterInformation.uid)
         .get()
         .then((v) {
       for (var element in v.docs) {
@@ -61,21 +64,19 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
   }
 
   void _getTherapistCount() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user == null) {
-      return;
-    }
     QuerySnapshot centerSnapshot = await FirebaseFirestore.instance
         .collection('center')
-        .where('uid', isEqualTo: user.uid)
+        .where('email', isEqualTo: CenterInformation.email)
         .get();
 
     if (centerSnapshot.docs.isEmpty) {
       return;
     }
+
+    String uid = centerSnapshot.docs.first.get('uid');
     QuerySnapshot therapistSnapshot = await FirebaseFirestore.instance
         .collection('Therapist')
-        .where('centerid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+        .where('centerid', isEqualTo: uid)
         .where("active", isEqualTo: true)
         .get();
 
@@ -84,28 +85,21 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
     });
   }
 
-  ////4
   Future<void> getMostActiveTherapist() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user == null) {
-      return;
-    }
     QuerySnapshot centerSnapshot = await FirebaseFirestore.instance
         .collection('center')
-        .where('uid', isEqualTo: user.uid)
+        .where('email', isEqualTo: CenterInformation.email)
         .get();
 
     if (centerSnapshot.docs.isEmpty) {
       return;
     }
 
-    // تحديد اسم الكولكشن
-    // الحصول على الأخصائي الأكثر تفاعلاً
+    String uid = centerSnapshot.docs.first.get('uid');
     final CollectionReference acceptedSessionsCollection =
         FirebaseFirestore.instance.collection('acceptedSessions');
-
     QuerySnapshot attendedSessions = await acceptedSessionsCollection
-        .where('centerid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+        .where('centerid', isEqualTo: uid)
         .where('TherapistStatus', isEqualTo: 'attandend')
         .get();
     Map<String, int> therapistSessions = {};
@@ -130,19 +124,15 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
   }
 
   void _getChildrenCount() async {
-    User? user = FirebaseAuth.instance.currentUser;
-    if (user == null) {
-      return;
-    }
-    QuerySnapshot ChildrenSnapshot = await FirebaseFirestore.instance
+    QuerySnapshot childrenSnapshot = await FirebaseFirestore.instance
         .collection('acceptedSessions')
-        .where('centerid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+        .where('centerid', isEqualTo: CenterInformation.uid)
         .get();
 
     setState(() {
       // تخزين الـ  في مجموعة لمنع التكرارات
       Set<String> childIds = Set<String>();
-      for (var doc in ChildrenSnapshot.docs) {
+      for (var doc in childrenSnapshot.docs) {
         childIds.add(doc.get('ChildID'));
       }
 
@@ -433,13 +423,21 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Text(
-                                              '$mostActiveTherapist',
-                                              style: const TextStyle(
-                                                fontSize: 24,
-                                                color: Color(0xff385a4a),
-                                              ),
-                                            ),
+                                            mostActiveTherapist != null
+                                                ? Text(
+                                                    '$mostActiveTherapist',
+                                                    style: const TextStyle(
+                                                      fontSize: 24,
+                                                      color: Color(0xff385a4a),
+                                                    ),
+                                                  )
+                                                : Text(
+                                                    'لا يوجد',
+                                                    style: const TextStyle(
+                                                      fontSize: 24,
+                                                      color: Color(0xff385a4a),
+                                                    ),
+                                                  ),
                                             const Padding(
                                               padding:
                                                   EdgeInsets.only(right: 20),

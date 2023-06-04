@@ -837,7 +837,8 @@ class _AlphabetChildPageState extends State<AlphabetChildPage> {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => SH_sound(),
+                                      builder: (context) => SH_sound(
+                                          childId: ChildID, page: 'SH_sound'),
                                     ));
                               },
                               child: Stack(

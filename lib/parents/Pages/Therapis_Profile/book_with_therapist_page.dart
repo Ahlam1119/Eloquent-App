@@ -570,44 +570,99 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                           ),
                                         ),
                                       );
-                                    }
+                                    } else {
+                                      late String date1 =
+                                          '${date.day}/${date.month}/${date.year}';
 
-                                    // Ask for New Session
-                                    else {
-                                      await AddSessiondetailsToFirebase();
-                                      await showDialog(
-                                        context: context,
-                                        builder: (context) => Theme(
-                                          data: ThemeData(
-                                              useMaterial3: true,
-                                              colorScheme: ColorScheme.fromSeed(
-                                                  seedColor:
-                                                      const Color(0xff385a4a))),
-                                          child: Directionality(
-                                            textDirection: TextDirection.rtl,
-                                            child: AlertDialog(
-                                              title: const Text(
-                                                  "تم ارسال طلبك بنجاح"),
-                                              content: const Text(
-                                                  "عند قبول الأخصائي للجسلة، سوف تضاف جلستك الى قائمة الجلسات القادمة"),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () {
-                                                    Navigator.of(context).pop();
-                                                    Navigator.of(context).pop();
-                                                    Navigator.of(context).pop();
-                                                  },
-                                                  child: const Text('حسناً'),
-                                                ),
-                                              ],
+                                      final proposedSessionQuery1 =
+                                          acceptedSessionsCollection
+                                              .where('TherapistStatus',
+                                                  isEqualTo: 'attandend')
+                                              .where(
+                                                'Date',
+                                                isEqualTo: date1,
+                                              )
+                                              .where(
+                                                'TimeRange',
+                                                isEqualTo: timeRange,
+                                              );
+                                      final proposedSessionSnapshot1 =
+                                          await proposedSessionQuery1.get();
+                                      if (proposedSessionSnapshot1
+                                          .docs.isNotEmpty) {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (context) => Theme(
+                                            data: ThemeData(
+                                                useMaterial3: true,
+                                                colorScheme:
+                                                    ColorScheme.fromSeed(
+                                                        seedColor: const Color(
+                                                            0xff385a4a))),
+                                            child: Directionality(
+                                              textDirection: TextDirection.rtl,
+                                              child: AlertDialog(
+                                                title: const Text('غير متوفر'),
+                                                content: const Text(
+                                                    'لدى الأخصائي جلسة في  نفس الوقت يرجى اختيار وقت آخر '),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    child: const Text('حسناً'),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      );
-                                    }
-                                  }
+                                        );
+                                      }
 
-                                  // await saveDoc();
+                                      // Ask for New Session
+                                      else {
+                                        await AddSessiondetailsToFirebase();
+                                        await showDialog(
+                                          context: context,
+                                          builder: (context) => Theme(
+                                            data: ThemeData(
+                                                useMaterial3: true,
+                                                colorScheme:
+                                                    ColorScheme.fromSeed(
+                                                        seedColor: const Color(
+                                                            0xff385a4a))),
+                                            child: Directionality(
+                                              textDirection: TextDirection.rtl,
+                                              child: AlertDialog(
+                                                title: const Text(
+                                                    "تم ارسال طلبك بنجاح"),
+                                                content: const Text(
+                                                    "عند قبول الأخصائي للجسلة، سوف تضاف جلستك الى قائمة الجلسات القادمة"),
+                                                actions: [
+                                                  TextButton(
+                                                    onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                    child: const Text('حسناً'),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                    }
+
+                                    // await saveDoc();
+                                  }
                                 }
                               },
                               child: const Text(

@@ -1436,7 +1436,7 @@ class _Pre_lsnguageState extends State<Pre_lsnguage> {
                             children: [
                               Radio(
                                 groupValue: oneThing,
-                                value: "لم يتقن",
+                                value: "اتقن ",
                                 onChanged: (value) {
                                   setState(() {
                                     oneThing = value.toString();

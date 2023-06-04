@@ -1,14 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class frequentQuestions extends StatefulWidget {
-  const frequentQuestions({super.key});
-
+class frequent_Questions extends StatefulWidget {
   @override
-  State<frequentQuestions> createState() => _frequentQuestionsState();
+  State<frequent_Questions> createState() => _frequent_QuestionsState();
 }
 
-class _frequentQuestionsState extends State<frequentQuestions> {
+class _frequent_QuestionsState extends State<frequent_Questions> {
   @override
   void initState() {
     super.initState();
@@ -183,7 +181,7 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                   title: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
-                      'هل بليغ يعمل في كل المناطق؟',
+                      'كيف يستفيد طفلي من تطبيق بليغ؟',
                       textAlign: TextAlign.end,
                       style: TextStyle(
                         color: Color(0xff385a4a),
@@ -202,7 +200,7 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
-                        "يخدم بليغ جميع المراكز من جميع المناطق, يحث انه يقدم الخدمات أون لاين",
+                        "يوفر تطبيق بليغ عدة مراحل تساعد الأطفال ذوي صعوبات النطق, كما يوفر التطبيق أمكانية حجز جلسات مع الأخصائيين",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color(0xff6888a0),
@@ -230,7 +228,7 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                   title: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
-                      'كيف يستفيد المركز من تطبيق بليغ؟',
+                      'كيف يمكنني انشاء حساب لطفلي؟',
                       textAlign: TextAlign.end,
                       style: TextStyle(
                         color: Color(0xff385a4a),
@@ -249,7 +247,7 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
-                        "يستطيع المركز تقديم الجلسات والأستشارات أونلاين عبر تطبيق بليغ",
+                        "من خلال الصفحة الرئيسية يمكن انشاء حساب للطفل وتعبئة البيانات",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color(0xff6888a0),
@@ -277,7 +275,7 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                   title: Align(
                     alignment: Alignment.centerRight,
                     child: Text(
-                      'كيف يمكن اضافة أخصائي جديد؟',
+                      "كيف يمكنني حجز جلسة؟",
                       textAlign: TextAlign.end,
                       style: TextStyle(
                         color: Color(0xff385a4a),
@@ -296,7 +294,7 @@ class _frequentQuestionsState extends State<frequentQuestions> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       child: Text(
-                        "من خلال صفحة إدارة الأخصائيين يمكن للمركز أدارة الأخصائيين وأضافة أخصائي جديد",
+                        "يمكنك حجز جلسة مع الاخصائي من خلال قائمة الأخصائيين ",
                         textAlign: TextAlign.right,
                         style: TextStyle(
                           color: Color(0xff6888a0),
@@ -309,6 +307,144 @@ class _frequentQuestionsState extends State<frequentQuestions> {
               ),
               const SizedBox(
                 height: 20,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: const Color(0x0c9bb0a5),
+                ),
+                child: const ExpansionTile(
+                  trailing: Icon(
+                    Icons.arrow_drop_down,
+                    size: 30,
+                  ),
+                  backgroundColor: Color(0x0c9bb0a5),
+                  title: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "كيف يمكنني الغاء حجز الجلسة؟",
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Color(0xff385a4a),
+                        fontSize: 16,
+                        fontFamily: "Cairo",
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  children: [
+                    Divider(
+                      indent: 20,
+                      endIndent: 20,
+                      color: Color.fromARGB(168, 159, 156, 156),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                      child: Text(
+                        "من خلال البروفايل الخاص بك يمكنك أستعراض الجلسات القادمة ,تفاصيل الجلسة, حذف الجلسة",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Color(0xff6888a0),
+                          fontSize: 13,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: const Color(0x0c9bb0a5),
+                ),
+                child: const ExpansionTile(
+                  trailing: Icon(
+                    Icons.arrow_drop_down,
+                    size: 30,
+                  ),
+                  backgroundColor: Color(0x0c9bb0a5),
+                  title: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "كيف يمكنني تعديل تاريخ الجلسة؟",
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Color(0xff385a4a),
+                        fontSize: 16,
+                        fontFamily: "Cairo",
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  children: [
+                    Divider(
+                      indent: 20,
+                      endIndent: 20,
+                      color: Color.fromARGB(168, 159, 156, 156),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                      child: Text(
+                        "من خلال البروفايل الخاص بك يمكنك أستعراض الجلسات القادمة بالنقر على ادارة الجلسات ثم, تفاصيل الجلسة والتعديل على بيانات الجلسة",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Color(0xff6888a0),
+                          fontSize: 13,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: const Color(0x0c9bb0a5),
+                ),
+                child: const ExpansionTile(
+                  trailing: Icon(
+                    Icons.arrow_drop_down,
+                    size: 30,
+                  ),
+                  backgroundColor: Color(0x0c9bb0a5),
+                  title: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "كيف يمكنني حضور الجلسة؟",
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                        color: Color(0xff385a4a),
+                        fontSize: 16,
+                        fontFamily: "Cairo",
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  children: [
+                    Divider(
+                      indent: 20,
+                      endIndent: 20,
+                      color: Color.fromARGB(168, 159, 156, 156),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                      child: Text(
+                        "من خلال البروفايل الخاص بك يمكنك أستعراض الجلسات القادمة بالنقر على ادارة الجلسات ثم, حضور الجلسة",
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          color: Color(0xff6888a0),
+                          fontSize: 13,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),

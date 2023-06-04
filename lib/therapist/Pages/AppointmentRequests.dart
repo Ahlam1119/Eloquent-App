@@ -312,7 +312,20 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
                                                                           horizontal:
                                                                               20),
                                                                   child:
-                                                                      TextField(
+                                                                      TextFormField(
+                                                                    validator:
+                                                                        (value) {
+                                                                      if (value ==
+                                                                              null ||
+                                                                          value
+                                                                              .isEmpty) {
+                                                                        return 'الرجاء ادخال إسم الجلسة';
+                                                                      }
+                                                                      return null;
+                                                                    },
+                                                                    autovalidateMode:
+                                                                        AutovalidateMode
+                                                                            .onUserInteraction,
                                                                     controller:
                                                                         SessionName,
                                                                     decoration:
@@ -553,7 +566,19 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
                                                                       SizedBox(
                                                                     height: 100,
                                                                     child:
-                                                                        TextField(
+                                                                        TextFormField(
+                                                                      validator:
+                                                                          (value) {
+                                                                        if (value ==
+                                                                                null ||
+                                                                            value.isEmpty) {
+                                                                          return 'الرجاء ادخال الهدف من الجلسة';
+                                                                        }
+                                                                        return null;
+                                                                      },
+                                                                      autovalidateMode:
+                                                                          AutovalidateMode
+                                                                              .onUserInteraction,
                                                                       keyboardType:
                                                                           TextInputType
                                                                               .multiline,

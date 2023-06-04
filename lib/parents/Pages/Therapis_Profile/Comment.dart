@@ -77,7 +77,7 @@ class _CommentPageState extends State<CommentPage> {
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 4,
+                                        width: 5,
                                       ),
                                       Column(
                                         mainAxisAlignment:
@@ -89,18 +89,22 @@ class _CommentPageState extends State<CommentPage> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
-                                              Text(
-                                                documentSnapshot['ParentName'],
-                                                textAlign: TextAlign.right,
-                                                style: TextStyle(
-                                                  color: Color(0xff385a4a),
-                                                  fontSize: 15,
-                                                  fontFamily: "Cairo",
-                                                  fontWeight: FontWeight.w700,
+                                              SizedBox(
+                                                width: 100,
+                                                child: Text(
+                                                  documentSnapshot[
+                                                      'ParentName'],
+                                                  textAlign: TextAlign.right,
+                                                  style: TextStyle(
+                                                    color: Color(0xff385a4a),
+                                                    fontSize: 15,
+                                                    fontFamily: "Cairo",
+                                                    fontWeight: FontWeight.w700,
+                                                  ),
                                                 ),
                                               ),
                                               SizedBox(
-                                                width: 90,
+                                                width: 70,
                                               ),
                                               RatingBar.builder(
                                                 itemSize: 16,

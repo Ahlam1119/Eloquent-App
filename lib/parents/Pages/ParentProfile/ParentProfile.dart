@@ -3,6 +3,7 @@ import 'package:eloquentapp/parents/Pages/ParentProfile/Parent_Sceduled_Session/
 
 import 'package:eloquentapp/parents/Pages/ParentProfile/Parent_Sceduled_Session/preivouesSession.dart';
 import 'package:eloquentapp/parents/Pages/ParentProfile/Parent_Sceduled_Session/upcomingSession.dart';
+import 'package:eloquentapp/parents/Pages/ParentProfile/fQ.dart';
 import 'package:eloquentapp/parents/Pages/ParentProfile/screenTime.dart';
 import 'package:eloquentapp/parents/Register_Login_Page/login.dart';
 import 'package:eloquentapp/screens/constants.dart';
@@ -298,7 +299,7 @@ class _ProfileState extends State<Profile> {
                                             context,
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    frequentQuestions()));
+                                                    frequent_Questions()));
                                       }),
                                       child: Card(
                                         elevation: 4,
