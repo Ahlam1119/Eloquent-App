@@ -575,7 +575,7 @@ class _Y_soundState extends State<Y_sound> {
                                     Container(
                                       width: 80,
                                       height: 80,
-                                      child: Image.asset("images/hand.png"),
+                                      child: Image.asset("images/hand1.png"),
                                     ),
                                   ],
                                 ),
