@@ -3,6 +3,8 @@ import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/fourthStory/fourthEvent.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/fourthStory/secondEvent.dart';
 import 'package:flutter/material.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class thirdEventFourth extends StatefulWidget {
   final String childId;
@@ -209,8 +211,21 @@ class _thirdEventFourthState extends State<thirdEventFourth> {
                                                     Align(
                                                         alignment: Alignment
                                                             .bottomCenter,
-                                                        child: Image.asset(
-                                                            "images/VolumUp.png")),
+                                                        child: GestureDetector(
+                                                          onTap: () async {
+                                                            AssetsAudioPlayer
+                                                                    .newPlayer()
+                                                                .open(
+                                                              Audio(
+                                                                  "images/StoryVoice.wav"),
+                                                              autoStart: true,
+                                                              showNotification:
+                                                                  true,
+                                                            );
+                                                          },
+                                                          child: Image.asset(
+                                                              "images/VolumUp.png"),
+                                                        )),
                                                   ],
                                                 ),
                                               )),
@@ -274,7 +289,7 @@ class _thirdEventFourthState extends State<thirdEventFourth> {
                                                                 childId:
                                                                     ChildID,
                                                                 page:
-                                                                    'fourthEvent'),
+                                                                    'fouthEventFourth'),
                                                       ));
                                                 },
                                               ),
@@ -307,7 +322,7 @@ class _thirdEventFourthState extends State<thirdEventFourth> {
                                                                 childId:
                                                                     ChildID,
                                                                 page:
-                                                                    'secondEvent'),
+                                                                    'secEventFourth'),
                                                       ));
                                                 },
                                               ),

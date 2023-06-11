@@ -149,13 +149,13 @@ class _ChildRegistrationState extends State<ChildRegistration> {
   // var _IntelligencetestNo;
   // var _allergyYes;
   // var _allergyNo;
-  late final String chronicdiseasesOtherField;
-  late final String CheckupsYesField;
-  late final String SurgeryYesField;
-  late final String IntelligencetestYesField;
-  late final String allergyYesField;
+  late String chronicdiseasesOtherField;
+  late String CheckupsYesField;
+  late String SurgeryYesField;
+  late String IntelligencetestYesField;
+  late String allergyYesField;
   var _previoustreatmentYes;
-  late final String previoustreatmentYesField;
+  late String previoustreatmentYesField;
   var _previoustreatmentNo;
   late String ChildAvatar = '';
 
@@ -348,31 +348,30 @@ class _ChildRegistrationState extends State<ChildRegistration> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment
                         .start, // Align widgets to the left edge
-
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Radio(
-                            groupValue: Movement,
-                            value: "قليل الحركة",
-                            onChanged: (value) {
-                              setState(() {
-                                Movement = value.toString();
-                              });
-                            },
-                            activeColor: Color(0xff385a4a),
-                          ),
                           Flexible(
-                            child: Text(
-                              "قليل الحركة",
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                color: Color(0xff030d1c),
-                                fontSize: 14,
-                                fontFamily: "Cairo",
-                                fontWeight: FontWeight.w500,
-                              ),
+                            child: Radio(
+                              groupValue: Movement,
+                              value: "قليل الحركة",
+                              onChanged: (value) {
+                                setState(() {
+                                  Movement = value.toString();
+                                });
+                              },
+                              activeColor: Color(0xff385a4a),
+                            ),
+                          ),
+                          Text(
+                            "قليل الحركة",
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Color(0xff030d1c),
+                              fontSize: 14,
+                              fontFamily: "Cairo",
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                           Radio(
@@ -385,38 +384,36 @@ class _ChildRegistrationState extends State<ChildRegistration> {
                             },
                             activeColor: Color(0xff385a4a),
                           ),
-                          Flexible(
-                            child: Text(
-                              "متوسط الحركة",
-                              textAlign: TextAlign.right,
-                              style: TextStyle(
-                                color: Color(0xff030d1c),
-                                fontSize: 14,
-                                fontFamily: "Cairo",
-                                fontWeight: FontWeight.w500,
-                              ),
+                          Text(
+                            "متوسط الحركة",
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Color(0xff030d1c),
+                              fontSize: 14,
+                              fontFamily: "Cairo",
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
-                          Radio(
-                            groupValue: Movement,
-                            value: "كثير الحركة",
-                            onChanged: (value) {
-                              setState(() {
-                                Movement = value.toString();
-                              });
-                            },
-                            activeColor: Color(0xff385a4a),
-                          ),
                           Flexible(
-                            child: Text(
-                              "كثير الحركة",
-                              // textAlign: TextAlign.right,
-                              style: TextStyle(
-                                color: Color(0xff030d1c),
-                                fontSize: 13,
-                                fontFamily: "Cairo",
-                                fontWeight: FontWeight.w500,
-                              ),
+                            child: Radio(
+                              groupValue: Movement,
+                              value: "كثير الحركة",
+                              onChanged: (value) {
+                                setState(() {
+                                  Movement = value.toString();
+                                });
+                              },
+                              activeColor: Color(0xff385a4a),
+                            ),
+                          ),
+                          Text(
+                            "كثير الحركة",
+                            // textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Color(0xff030d1c),
+                              fontSize: 13,
+                              fontFamily: "Cairo",
+                              fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],
@@ -546,28 +543,32 @@ class _ChildRegistrationState extends State<ChildRegistration> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Radio(
-                        groupValue: understanding,
-                        value: 'يفهم التعليمات بسهولة',
-                        onChanged: (value) {
-                          setState(() {
-                            understanding = value!;
-                          });
-                        },
-                        activeColor: Color(0xff385a4a),
+                      Flexible(
+                        child: Radio(
+                          groupValue: understanding,
+                          value: 'يفهم التعليمات بسهولة',
+                          onChanged: (value) {
+                            setState(() {
+                              understanding = value!;
+                            });
+                          },
+                          activeColor: Color(0xff385a4a),
+                        ),
                       ),
-                      Flexible(child: Text('يفهم التعليمات بسهولة')),
-                      Radio(
-                        groupValue: understanding,
-                        value: 'يفهم التعليمات بصعوبة',
-                        onChanged: (value) {
-                          setState(() {
-                            understanding = value!;
-                          });
-                        },
-                        activeColor: Color(0xff385a4a),
+                      Text('يفهم التعليمات بسهولة'),
+                      Flexible(
+                        child: Radio(
+                          groupValue: understanding,
+                          value: 'يفهم التعليمات بصعوبة',
+                          onChanged: (value) {
+                            setState(() {
+                              understanding = value!;
+                            });
+                          },
+                          activeColor: Color(0xff385a4a),
+                        ),
                       ),
-                      Flexible(child: Text('يفهم التعليمات بصعوبة')),
+                      Text('يفهم التعليمات بصعوبة'),
                     ],
                   ),
                   /**--------------------------------------------- */
@@ -622,7 +623,6 @@ class _ChildRegistrationState extends State<ChildRegistration> {
                     ],
                   ),
                   /**--------------------------------------------- */
-
                   Row(
                     children: [
                       Text(
@@ -982,15 +982,17 @@ class _ChildRegistrationState extends State<ChildRegistration> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Radio(
-                            groupValue: MotionClassification,
-                            value: "طبيعي",
-                            onChanged: (value) {
-                              setState(() {
-                                MotionClassification = value!;
-                              });
-                            },
-                            activeColor: Color(0xff385a4a),
+                          Flexible(
+                            child: Radio(
+                              groupValue: MotionClassification,
+                              value: "طبيعي",
+                              onChanged: (value) {
+                                setState(() {
+                                  MotionClassification = value!;
+                                });
+                              },
+                              activeColor: Color(0xff385a4a),
+                            ),
                           ),
                           checkBoxLabel(label: 'طبيعي'),
                           Radio(
@@ -1447,147 +1449,147 @@ class _ChildRegistrationState extends State<ChildRegistration> {
                   SizedBox(
                     height: 37,
                   ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: Column(
-                      children: [
-                        ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              minimumSize: Size(180, 45),
-                              backgroundColor: Color(0xff394445),
-                              elevation: 3,
-                              shape: const RoundedRectangleBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10)),
-                              )),
-                          onPressed: () async {
-                            // late final childid = uuid.v4();
-                            // try {
-                            //   AddChildData(
-                            //       ParentName: ParentNmae,
-                            //       name: _name,
-                            //       BirthDate: date,
-                            //       ChildEducationalLevel: _EducationalLevel,
-                            //       chronicdiseasesOtherField: chronicDiseases == "لا"
-                            //           ? "لا يوجد"
-                            //           : chronicdiseasesOtherField,
-                            //       previoustreatmentYesField:
-                            //           previousTreatment == "لا"
-                            //               ? "لا يوجد"
-                            //               : previoustreatmentYesField,
-                            //       CheckupsYesField: checkUp == "لا"
-                            //           ? "لا يوجد"
-                            //           : CheckupsYesField,
-                            //       SurgeryYesField: SurgeryYesField,
-                            //       IntelligencetestYesField:
-                            //           IntelligencetestYesField,
-                            //       allergyYesField: allergyYesField,
-                            //       uid: childid,
-                            //       uidParent: ParentId,
-                            //       Movement: Movement,
-                            //       personalBehaviour: personalBehaviour,
-                            //       emotionalBehaviour: emotionalBehaviour,
-                            //       understanding: understanding,
-                            //       dispersion: dispersion,
-                            //       visualCommunication: visualCommunication,
-                            //       Agressive: Agressive,
-                            //       fear: fear,
-                            //       cooperating: cooperating,
-                            //       visualCondition: visualCondition,
-                            //       auditoryCondition: auditoryCondition,
-                            //       expressionLevel: expressionLevel,
-                            //       LetteringLevel: LetteringLevel,
-                            //       MotionClassification: MotionClassification,
-                            //       physicalGrowth: physicalGrowth,
-                            //       chronicDiseases: chronicDiseases,
-                            //       previousTreatment: previousTreatment,
-                            //       checkUp: checkUp,
-                            //       Surgery: Surgery,
-                            //       DefiningIntelligence: DefiningIntelligence,
-                            //       sensitive: sensitive);
-                            // setState(() {
-                            //   Navigator.push(
-                            //       context,
-                            //       MaterialPageRoute(
-                            //           builder: (context) =>
-                            //               MyBottomNavigationBar()));
-                            // });
-                            // } catch (e) {
-                            //   print(e);
-                            // }
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 25),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Column(
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                minimumSize: Size(180, 45),
+                                backgroundColor: Color(0xff394445),
+                                elevation: 3,
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10)),
+                                )),
+                            onPressed: () async {
+                              // late final childid = uuid.v4();
+                              // try {
+                              //   AddChildData(
+                              //       ParentName: ParentNmae,
+                              //       name: _name,
+                              //       BirthDate: date,
+                              //       ChildEducationalLevel: _EducationalLevel,
+                              //       chronicdiseasesOtherField: chronicDiseases == "لا"
+                              //           ? "لا يوجد"
+                              //           : chronicdiseasesOtherField,
+                              //       previoustreatmentYesField:
+                              //           previousTreatment == "لا"
+                              //               ? "لا يوجد"
+                              //               : previoustreatmentYesField,
+                              //       CheckupsYesField: checkUp == "لا"
+                              //           ? "لا يوجد"
+                              //           : CheckupsYesField,
+                              //       SurgeryYesField: SurgeryYesField,
+                              //       IntelligencetestYesField:
+                              //           IntelligencetestYesField,
+                              //       allergyYesField: allergyYesField,
+                              //       uid: childid,
+                              //       uidParent: ParentId,
+                              //       Movement: Movement,
+                              //       personalBehaviour: personalBehaviour,
+                              //       emotionalBehaviour: emotionalBehaviour,
+                              //       understanding: understanding,
+                              //       dispersion: dispersion,
+                              //       visualCommunication: visualCommunication,
+                              //       Agressive: Agressive,
+                              //       fear: fear,
+                              //       cooperating: cooperating,
+                              //       visualCondition: visualCondition,
+                              //       auditoryCondition: auditoryCondition,
+                              //       expressionLevel: expressionLevel,
+                              //       LetteringLevel: LetteringLevel,
+                              //       MotionClassification: MotionClassification,
+                              //       physicalGrowth: physicalGrowth,
+                              //       chronicDiseases: chronicDiseases,
+                              //       previousTreatment: previousTreatment,
+                              //       checkUp: checkUp,
+                              //       Surgery: Surgery,
+                              //       DefiningIntelligence: DefiningIntelligence,
+                              //       sensitive: sensitive);
+                              // setState(() {
+                              //   Navigator.push(
+                              //       context,
+                              //       MaterialPageRoute(
+                              //           builder: (context) =>
+                              //               MyBottomNavigationBar()));
+                              // });
+                              // } catch (e) {
+                              //   print(e);
+                              // }
 
-                            late final childid = uuid.v4();
-                            final isSaved = await FirebaseHelperChild.saveUser(
-                                ParentName: ParentName,
-                                name: _name,
-                                BirthDate: date,
-                                ChildEducationalLevel: _EducationalLevel,
-                                chronicdiseasesOtherField:
-                                    chronicDiseases == "امراض اخرى"
-                                        ? chronicdiseasesOtherField
-                                        : chronicDiseases.toString(),
-                                previoustreatmentYesField:
-                                    previousTreatment == "لا"
-                                        ? 'مثال: علاج سلوكي'
-                                        : previoustreatmentYesField,
-                                CheckupsYesField: checkUp == "لا"
-                                    ? 'حدد نوع الفحوصات'
-                                    : CheckupsYesField,
-                                SurgeryYesField: Surgery == "لا"
-                                    ? 'حدد نوع العمليات'
-                                    : SurgeryYesField,
-                                IntelligencetestYesField:
-                                    DefiningIntelligence == "لا"
-                                        ? "نعم، أذكر النسبة "
-                                        : IntelligencetestYesField,
-                                allergyYesField: sensitive == "لا"
-                                    ? 'اذكر نوع الحساسية'
-                                    : allergyYesField,
-                                uid: childid,
-                                uidParent: ParenId,
-                                Movement: Movement,
-                                personalBehaviour: personalBehaviour,
-                                emotionalBehaviour: emotionalBehaviour,
-                                understanding: understanding,
-                                dispersion: dispersion,
-                                visualCommunication: visualCommunication,
-                                Agressive: Agressive,
-                                fear: fear,
-                                cooperating: cooperating,
-                                visualCondition: visualCondition,
-                                auditoryCondition: auditoryCondition,
-                                expressionLevel: expressionLevel,
-                                LetteringLevel: LetteringLevel,
-                                MotionClassification: MotionClassification,
-                                physicalGrowth: physicalGrowth,
-                                chronicDiseases: chronicDiseases,
-                                previousTreatment: previousTreatment,
-                                checkUp: checkUp,
-                                Surgery: Surgery,
-                                DefiningIntelligence: DefiningIntelligence,
-                                sensitive: sensitive,
-                                ChildAvatar: ChildAvatar);
-                            if (isSaved) {
-                              setState(() {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            MyBottomNavigationBar()));
-                              });
-                            }
-                          },
-                          child: Text(
-                            'انشاء حساب الطفل',
-                            style: TextStyle(
-                              color: Color(0xffF8F8F8),
-                              fontSize: 14,
-                              fontFamily: "Cairo",
-                              fontWeight: FontWeight.w500,
+                              late final childid = uuid.v4();
+                              final isSaved = await FirebaseHelperChild.saveUser(
+                                  ParentName: ParentName,
+                                  name: _name,
+                                  BirthDate: date,
+                                  ChildEducationalLevel: _EducationalLevel,
+                                  chronicdiseasesOtherField:
+                                      chronicDiseases == ""
+                                          ? chronicdiseasesOtherField
+                                          : chronicDiseases.toString(),
+                                  previoustreatmentYesField:
+                                      previousTreatment == "لا"
+                                          ? ""
+                                          : previoustreatmentYesField,
+                                  CheckupsYesField:
+                                      checkUp == "لا" ? "" : CheckupsYesField,
+                                  SurgeryYesField:
+                                      Surgery == "لا" ? "" : SurgeryYesField,
+                                  IntelligencetestYesField:
+                                      DefiningIntelligence == "لا"
+                                          ? ""
+                                          : IntelligencetestYesField,
+                                  allergyYesField:
+                                      sensitive == "لا" ? "" : allergyYesField,
+                                  uid: childid,
+                                  uidParent: ParenId,
+                                  Movement: Movement,
+                                  personalBehaviour: personalBehaviour,
+                                  emotionalBehaviour: emotionalBehaviour,
+                                  understanding: understanding,
+                                  dispersion: dispersion,
+                                  visualCommunication: visualCommunication,
+                                  Agressive: Agressive,
+                                  fear: fear,
+                                  cooperating: cooperating,
+                                  visualCondition: visualCondition,
+                                  auditoryCondition: auditoryCondition,
+                                  expressionLevel: expressionLevel,
+                                  LetteringLevel: LetteringLevel,
+                                  MotionClassification: MotionClassification,
+                                  physicalGrowth: physicalGrowth,
+                                  chronicDiseases: chronicDiseases,
+                                  previousTreatment: previousTreatment,
+                                  checkUp: checkUp,
+                                  Surgery: Surgery,
+                                  DefiningIntelligence: DefiningIntelligence,
+                                  sensitive: sensitive,
+                                  ChildAvatar: ChildAvatar);
+                              if (isSaved) {
+                                setState(() {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              MyBottomNavigationBar()));
+                                });
+                              }
+                            },
+                            child: Text(
+                              'انشاء حساب الطفل',
+                              style: TextStyle(
+                                color: Color(0xffF8F8F8),
+                                fontSize: 14,
+                                fontFamily: "Cairo",
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   )
                 ],

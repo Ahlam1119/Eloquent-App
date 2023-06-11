@@ -1,7 +1,9 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/secondEvent.dart';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class firstEvent extends StatefulWidget {
   final String childId;
@@ -203,8 +205,20 @@ class _firstEventState extends State<firstEvent> {
                                               Align(
                                                   alignment:
                                                       Alignment.bottomCenter,
-                                                  child: Image.asset(
-                                                      "images/VolumUp.png")),
+                                                  child: GestureDetector(
+                                                    onTap: () async {
+                                                      AssetsAudioPlayer
+                                                              .newPlayer()
+                                                          .open(
+                                                        Audio(
+                                                            "images/StoryVoice.wav"),
+                                                        autoStart: true,
+                                                        showNotification: true,
+                                                      );
+                                                    },
+                                                    child: Image.asset(
+                                                        "images/VolumUp.png"),
+                                                  )),
                                             ],
                                           ),
                                         )),

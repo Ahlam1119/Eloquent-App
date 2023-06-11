@@ -6,6 +6,7 @@ list(APPEND FLUTTER_PLUGIN_LIST
   audioplayers_windows
   awesome_notifications
   permission_handler_windows
+  url_launcher_windows
   zego_express_engine
   zego_zim
 )

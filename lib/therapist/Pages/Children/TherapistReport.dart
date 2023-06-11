@@ -29,6 +29,7 @@ class _TherapistReportState extends State<TherapistReport> {
   final CollectionReference usersRef = _db.collection('acceptedSessions');
   late Query query = usersRef
       .where('ChildID', isEqualTo: widget.ChildID)
+      .where('TherapistID', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
       .where('Parentstatus', isEqualTo: 'attandend')
       .where('TherapistStatus', isEqualTo: 'attandend');
 
@@ -96,21 +97,21 @@ class _TherapistReportState extends State<TherapistReport> {
                                   SizedBox(
                                     height: 5,
                                   ),
-                                  // Row(
-                                  //   children: [
-                                  //     Image.asset(
-                                  //       "images/NameCard.png",
-                                  //     ),
-                                  //     const SizedBox(width: 10),
-                                  //     Text(
-                                  //       documentSnapshot['SessionGoul'],
-                                  //       style: TextStyle(
-                                  //         color: Color(0xff6888a0),
-                                  //         fontSize: 14,
-                                  //       ),
-                                  //     ),
-                                  //   ],
-                                  // ),
+                                  Row(
+                                    children: [
+                                      Image.asset(
+                                        "images/NameCard.png",
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Text(
+                                        documentSnapshot['SessionGoul'],
+                                        style: TextStyle(
+                                          color: Color(0xff6888a0),
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                   SizedBox(
                                     height: 5,
                                   ),
@@ -528,7 +529,8 @@ class _TherapistReportState extends State<TherapistReport> {
                                                                         FirebaseFirestore
                                                                             .instance
                                                                             .collection('Report')
-                                                                            .add({
+                                                                            .doc(Sid)
+                                                                            .set({
                                                                           'ReportID':
                                                                               Sid,
                                                                           'TherapistNote':

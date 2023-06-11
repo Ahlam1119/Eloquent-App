@@ -234,24 +234,29 @@ class _A_Test_PageState extends State<A_Test_Page> {
   void checkAnswer(int selectedSoundIndex) {
     if (!isTestFinished) {
       final bool isCorrectAnswer = selectedSoundIndex == correctIndex;
-
       if (isCorrectAnswer) {
-        // Correct answer
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return CorrectAnswer(context);
-          },
-        );
+        CorrectAnswerDialog(); // Correct answer
       } else {
-        // Incorrect answer
-        showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return WrongAnswer(context);
-            });
+        WrongAnswerDialog(); // Incorrect answer
       }
     }
+  }
+
+  Future<dynamic> WrongAnswerDialog() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return WrongAnswer(context);
+        });
+  }
+
+  Future<dynamic> CorrectAnswerDialog() {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return CorrectAnswer(context);
+      },
+    );
   }
 
   AlertDialog WrongAnswer(BuildContext context) {

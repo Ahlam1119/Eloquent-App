@@ -89,10 +89,13 @@ class _TherapistHomeScreenState extends State<TherapistHomeScreen> {
         .get();
 
     // Extract the session dates from the documents
-    List<DateTime> sessionDates = therapistSessionsSnapshot.docs.map((doc) {
-      DateFormat dateFormat = DateFormat('dd/MM/yyyy');
-      return dateFormat.parse(doc['Date']);
-    }).toList();
+    List<DateTime> sessionDates = therapistSessionsSnapshot.docs
+        .map((doc) {
+          DateFormat dateFormat = DateFormat('dd/MM/yyyy');
+          return dateFormat.parse(doc['Date']);
+        })
+        .toSet()
+        .toList();
 
     return sessionDates;
   }

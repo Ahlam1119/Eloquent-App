@@ -4,6 +4,8 @@ import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/sec
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/secStory/secEventSec.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildingconcepts.dart';
 import 'package:flutter/material.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class firstEventSec extends StatefulWidget {
   final String childId;
@@ -205,8 +207,20 @@ class _firstEventSecState extends State<firstEventSec> {
                                               Align(
                                                   alignment:
                                                       Alignment.bottomCenter,
-                                                  child: Image.asset(
-                                                      "images/VolumUp.png")),
+                                                  child: GestureDetector(
+                                                    onTap: () async {
+                                                      AssetsAudioPlayer
+                                                              .newPlayer()
+                                                          .open(
+                                                        Audio(
+                                                            "images/StoryVoice.wav"),
+                                                        autoStart: true,
+                                                        showNotification: true,
+                                                      );
+                                                    },
+                                                    child: Image.asset(
+                                                        "images/VolumUp.png"),
+                                                  )),
                                             ],
                                           ),
                                         )),
@@ -267,7 +281,7 @@ class _firstEventSecState extends State<firstEventSec> {
                                                 builder: (context) =>
                                                     secEventSec(
                                                         childId: ChildID,
-                                                        page: 'secondEvent'),
+                                                        page: 'secEventSec'),
                                               ));
                                         },
                                       ),

@@ -8,6 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:eloquentapp/Child/screens/ChildWelcome.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ChildScreen extends StatefulWidget {
   final String childId;
@@ -247,6 +248,13 @@ class _ChildScreenState extends State<ChildScreen> {
 
   late String Name = ChildInfo['name'];
   late String ChildAvatar = ChildInfo['ChildAvatar'];
+  final Uri _url = Uri.parse('unitydl://unityBookARlink');
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -493,9 +501,7 @@ class _ChildScreenState extends State<ChildScreen> {
                       Align(
                         alignment: Alignment.center,
                         child: InkWell(
-                          onTap: () {
-                            // Handle button tap
-                          },
+                          onTap: _launchUrl,
                           child: Image(
                             image: AssetImage('images/CameraChild.png'),
                             width: 95,

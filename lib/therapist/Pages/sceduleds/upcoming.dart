@@ -70,7 +70,7 @@ class _upcomingState extends State<upcoming> {
     var sessionRef = _db.collection('acceptedSessions');
     await sessionRef
         .doc(docId)
-        .update({"SessionName": Sessionname, "SessionGoul": SessionGoal});
+        .set({"SessionName": Sessionname, "SessionGoul": SessionGoal});
   }
 
   // late DocumentReference CanceldSession =
@@ -115,6 +115,9 @@ class _upcomingState extends State<upcoming> {
   //  },
   //  );
 //  }
+
+  final NameOfSession = TextEditingController();
+  final GoulOfSession = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -290,10 +293,11 @@ class _upcomingState extends State<upcoming> {
                                       }
                                     });
 
-                                    late String SessionN =
+                                    NameOfSession.text =
                                         SessionDocument['SessionName'];
-                                    late String SessionG =
+                                    GoulOfSession.text =
                                         SessionDocument['SessionGoul'];
+
                                     showModalBottomSheet(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
@@ -351,9 +355,7 @@ class _upcomingState extends State<upcoming> {
                                                             height: 50,
                                                             child: TextField(
                                                               controller:
-                                                                  TextEditingController(
-                                                                      text:
-                                                                          SessionN),
+                                                                  NameOfSession,
                                                               onChanged:
                                                                   ((value) {
                                                                 Sessionname =
@@ -485,9 +487,7 @@ class _upcomingState extends State<upcoming> {
                                                               // minLines: 10,
                                                               // maxLength: 12,
                                                               controller:
-                                                                  TextEditingController(
-                                                                      text:
-                                                                          SessionG),
+                                                                  GoulOfSession,
                                                               onChanged:
                                                                   ((value) {
                                                                 SessionGoal =

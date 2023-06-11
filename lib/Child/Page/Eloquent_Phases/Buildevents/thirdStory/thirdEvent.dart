@@ -4,7 +4,8 @@ import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/fou
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/firsStory/secondEvent.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/thirdStory/fourthEvent.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/thirdStory/secondEvent.dart';
-
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildingconcepts.dart';
 import 'package:flutter/material.dart';
 
@@ -208,8 +209,20 @@ class _thirdEventThirdState extends State<thirdEventThird> {
                                               Align(
                                                   alignment:
                                                       Alignment.bottomCenter,
-                                                  child: Image.asset(
-                                                      "images/VolumUp.png")),
+                                                  child: GestureDetector(
+                                                    onTap: () async {
+                                                      AssetsAudioPlayer
+                                                              .newPlayer()
+                                                          .open(
+                                                        Audio(
+                                                            "images/StoryVoice.wav"),
+                                                        autoStart: true,
+                                                        showNotification: true,
+                                                      );
+                                                    },
+                                                    child: Image.asset(
+                                                        "images/VolumUp.png"),
+                                                  )),
                                             ],
                                           ),
                                         )),
@@ -272,7 +285,7 @@ class _thirdEventThirdState extends State<thirdEventThird> {
                                                         fourthEventThird(
                                                             childId: ChildID,
                                                             page:
-                                                                'fourthEvent'),
+                                                                'fourthEventThird'),
                                                   ));
                                             },
                                           ),
@@ -303,7 +316,7 @@ class _thirdEventThirdState extends State<thirdEventThird> {
                                                         secondEventThird(
                                                             childId: ChildID,
                                                             page:
-                                                                'secondEvent'),
+                                                                'secondEventThird'),
                                                   ));
                                             },
                                           ),

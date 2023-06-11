@@ -7,6 +7,8 @@ import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/secStory/fift
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/secStory/thirdEventSec.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildingconcepts.dart';
 import 'package:flutter/material.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class fouthEventFourth extends StatefulWidget {
   final String childId;
@@ -208,8 +210,20 @@ class _fouthEventFourthState extends State<fouthEventFourth> {
                                               Align(
                                                   alignment:
                                                       Alignment.bottomCenter,
-                                                  child: Image.asset(
-                                                      "images/VolumUp.png")),
+                                                  child: GestureDetector(
+                                                    onTap: () async {
+                                                      AssetsAudioPlayer
+                                                              .newPlayer()
+                                                          .open(
+                                                        Audio(
+                                                            "images/StoryVoice.wav"),
+                                                        autoStart: true,
+                                                        showNotification: true,
+                                                      );
+                                                    },
+                                                    child: Image.asset(
+                                                        "images/VolumUp.png"),
+                                                  )),
                                             ],
                                           ),
                                         )),
@@ -270,7 +284,8 @@ class _fouthEventFourthState extends State<fouthEventFourth> {
                                                   builder: (context) =>
                                                       fifthEventFourth(
                                                           childId: ChildID,
-                                                          page: 'fourthEvent'),
+                                                          page:
+                                                              'fifthEventFourth'),
                                                 ));
                                           },
                                         ),
@@ -300,7 +315,8 @@ class _fouthEventFourthState extends State<fouthEventFourth> {
                                                   builder: (context) =>
                                                       thirdEventFourth(
                                                           childId: ChildID,
-                                                          page: 'secondEvent'),
+                                                          page:
+                                                              'thirdEventFourth'),
                                                 ));
                                           },
                                         ),

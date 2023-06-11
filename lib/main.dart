@@ -9,6 +9,7 @@ import 'package:eloquentapp/parents/Pages/home.dart';
 import 'package:eloquentapp/therapist/Pages/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() async {
   //conect the project to firebase

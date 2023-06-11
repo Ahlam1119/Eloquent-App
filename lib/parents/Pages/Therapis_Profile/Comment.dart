@@ -90,7 +90,7 @@ class _CommentPageState extends State<CommentPage> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               SizedBox(
-                                                width: 100,
+                                                width: 60,
                                                 child: Text(
                                                   documentSnapshot[
                                                       'ParentName'],

@@ -422,15 +422,16 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                 final therapistsCollection = FirebaseFirestore
                                     .instance
                                     .collection('Therapist');
-                                final requestedSessionsCollection =
-                                    FirebaseFirestore.instance
-                                        .collection('requestedSessions');
                                 final acceptedSessionsCollection =
                                     FirebaseFirestore.instance
                                         .collection('acceptedSessions');
+
+                                // Check if the Parent has a requested session in progress
+                                final requestedSessionsCollection =
+                                    FirebaseFirestore.instance
+                                        .collection('requestedSessions');
                                 late String date1 =
                                     '${date.day}/${date.month}/${date.year}';
-                                // Check if the Parent has a requested session in progress
                                 final requestedSessionQuery =
                                     requestedSessionsCollection
                                         .where('ParentId',
@@ -447,39 +448,10 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                     await requestedSessionQuery.get();
 
                                 if (requestedSessionSnapshot.docs.isNotEmpty) {
-                                  await showDialog(
-                                    context: context,
-                                    builder: (context) => Theme(
-                                      data: ThemeData(
-                                          useMaterial3: true,
-                                          colorScheme: ColorScheme.fromSeed(
-                                              seedColor:
-                                                  const Color(0xff385a4a))),
-                                      child: Directionality(
-                                        textDirection: TextDirection.rtl,
-                                        child: AlertDialog(
-                                          title: const Text(
-                                              "يوجد لديك طلب سابق جاري العمل عليه"),
-                                          content: const Text(
-                                              "عند قبول الأخصائي للجسلة، سوف تضاف جلستك الى قائمة الجلسات القادمة"),
-                                          actions: [
-                                            TextButton(
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                  Navigator.of(context).pop();
-                                                },
-                                                child: const Text('حسناً')),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  );
+                                  await InProgressRequestDialog(context);
                                 }
-
-                                // Check if the mother is trying to book a session at the same time as a previously requested session
+                                // Check if the Parent is trying to book a session at the same time as a previously requested session
                                 else {
-                                  late String date1 =
-                                      '${date.day}/${date.month}/${date.year}';
                                   final requestedSessionQuery =
                                       requestedSessionsCollection
                                           .where('ParentId',
@@ -494,39 +466,10 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                   final proposedSessionSnapshot =
                                       await requestedSessionQuery.get();
                                   if (proposedSessionSnapshot.docs.isNotEmpty) {
-                                    await showDialog(
-                                      context: context,
-                                      builder: (context) => Theme(
-                                        data: ThemeData(
-                                            useMaterial3: true,
-                                            colorScheme: ColorScheme.fromSeed(
-                                                seedColor:
-                                                    const Color(0xff385a4a))),
-                                        child: Directionality(
-                                          textDirection: TextDirection.rtl,
-                                          child: AlertDialog(
-                                            title: const Text('طلب مسبق'),
-                                            content: const Text(
-                                                'لديك طلب مسبق في هذه اليوم جاري العمل عليه انتظري قبول الأخصائي او قومي بإلغاء الجلسة'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () {
-                                                  Navigator.of(context).pop();
-                                                  Navigator.of(context).pop();
-                                                },
-                                                child: const Text('حسناً'),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    );
+                                    await PrRequestDialog(context);
                                   }
                                   // Check if the Parent is trying to book a session at the same time as a previously accepted session
                                   else {
-                                    late String date1 =
-                                        '${date.day}/${date.month}/${date.year}';
-
                                     final proposedSessionQuery =
                                         acceptedSessionsCollection
                                             .where('ParentId',
@@ -542,34 +485,7 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                         await proposedSessionQuery.get();
                                     if (proposedSessionSnapshot
                                         .docs.isNotEmpty) {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (context) => Theme(
-                                          data: ThemeData(
-                                              useMaterial3: true,
-                                              colorScheme: ColorScheme.fromSeed(
-                                                  seedColor:
-                                                      const Color(0xff385a4a))),
-                                          child: Directionality(
-                                            textDirection: TextDirection.rtl,
-                                            child: AlertDialog(
-                                              title: const Text(
-                                                  'تعارض في الجلسات'),
-                                              content: const Text(
-                                                  'لديك جلسة مع الأخصائي في نفس الوقت يرجى اختيار وقت آخر او قم بإلغاء الطلب'),
-                                              actions: [
-                                                TextButton(
-                                                  onPressed: () {
-                                                    Navigator.of(context).pop();
-                                                    Navigator.of(context).pop();
-                                                  },
-                                                  child: const Text('حسناً'),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      );
+                                      await SessionConfilctDialog(context);
                                     } else {
                                       late String date1 =
                                           '${date.day}/${date.month}/${date.year}';
@@ -590,74 +506,13 @@ class _BottomModalSheetInfo extends StatelessWidget {
                                           await proposedSessionQuery1.get();
                                       if (proposedSessionSnapshot1
                                           .docs.isNotEmpty) {
-                                        await showDialog(
-                                          context: context,
-                                          builder: (context) => Theme(
-                                            data: ThemeData(
-                                                useMaterial3: true,
-                                                colorScheme:
-                                                    ColorScheme.fromSeed(
-                                                        seedColor: const Color(
-                                                            0xff385a4a))),
-                                            child: Directionality(
-                                              textDirection: TextDirection.rtl,
-                                              child: AlertDialog(
-                                                title: const Text('غير متوفر'),
-                                                content: const Text(
-                                                    'لدى الأخصائي جلسة في  نفس الوقت يرجى اختيار وقت آخر '),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () {
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                    },
-                                                    child: const Text('حسناً'),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        );
+                                        await Unavailable(context);
                                       }
 
                                       // Ask for New Session
                                       else {
                                         await AddSessiondetailsToFirebase();
-                                        await showDialog(
-                                          context: context,
-                                          builder: (context) => Theme(
-                                            data: ThemeData(
-                                                useMaterial3: true,
-                                                colorScheme:
-                                                    ColorScheme.fromSeed(
-                                                        seedColor: const Color(
-                                                            0xff385a4a))),
-                                            child: Directionality(
-                                              textDirection: TextDirection.rtl,
-                                              child: AlertDialog(
-                                                title: const Text(
-                                                    "تم ارسال طلبك بنجاح"),
-                                                content: const Text(
-                                                    "عند قبول الأخصائي للجسلة، سوف تضاف جلستك الى قائمة الجلسات القادمة"),
-                                                actions: [
-                                                  TextButton(
-                                                    onPressed: () {
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                    },
-                                                    child: const Text('حسناً'),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        );
+                                        await RequestSentSuccessfully(context);
                                       }
                                     }
 
@@ -680,6 +535,151 @@ class _BottomModalSheetInfo extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Future<dynamic> RequestSentSuccessfully(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => Theme(
+        data: ThemeData(
+            useMaterial3: true,
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xff385a4a))),
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: AlertDialog(
+            title: const Text("تم ارسال طلبك بنجاح"),
+            content: const Text(
+                "عند قبول الأخصائي للجسلة، سوف تضاف جلستك الى قائمة الجلسات القادمة"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                },
+                child: const Text('حسناً'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> Unavailable(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => Theme(
+        data: ThemeData(
+            useMaterial3: true,
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xff385a4a))),
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: AlertDialog(
+            title: const Text('غير متوفر'),
+            content: const Text(
+                'لدى الأخصائي جلسة في  نفس الوقت يرجى اختيار وقت آخر '),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                },
+                child: const Text('حسناً'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> SessionConfilctDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => Theme(
+        data: ThemeData(
+            useMaterial3: true,
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xff385a4a))),
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: AlertDialog(
+            title: const Text('تعارض في الجلسات'),
+            content: const Text(
+                'لديك جلسة مع الأخصائي في نفس الوقت يرجى اختيار وقت آخر او قم بإلغاء الطلب'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                },
+                child: const Text('حسناً'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> PrRequestDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => Theme(
+        data: ThemeData(
+            useMaterial3: true,
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xff385a4a))),
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: AlertDialog(
+            title: const Text('طلب مسبق'),
+            content: const Text(
+                'لديك طلب مسبق في هذه اليوم جاري العمل عليه انتظري قبول الأخصائي او قومي بإلغاء الجلسة'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  Navigator.of(context).pop();
+                },
+                child: const Text('حسناً'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<dynamic> InProgressRequestDialog(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => Theme(
+        data: ThemeData(
+            useMaterial3: true,
+            colorScheme:
+                ColorScheme.fromSeed(seedColor: const Color(0xff385a4a))),
+        child: Directionality(
+          textDirection: TextDirection.rtl,
+          child: AlertDialog(
+            title: const Text("يوجد لديك طلب سابق جاري العمل عليه"),
+            content: const Text(
+                "عند قبول الأخصائي للجسلة، سوف تضاف جلستك الى قائمة الجلسات القادمة"),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('حسناً')),
+            ],
+          ),
+        ),
       ),
     );
   }

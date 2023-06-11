@@ -13,6 +13,7 @@ class AppointmentRequests extends StatefulWidget {
 class _AppointmentRequestsState extends State<AppointmentRequests> {
   //instance for cloud firestore
   final _auth = FirebaseAuth.instance;
+  final _formKey = GlobalKey<FormState>();
 
   late User singedInUser;
   @override
@@ -34,7 +35,8 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
 
   TextEditingController SessionName = TextEditingController();
   TextEditingController SessionGoul = TextEditingController();
-
+  late String SessionG;
+  late String SessionN;
   static final FirebaseFirestore _db = FirebaseFirestore.instance;
   final CollectionReference usersRef = _db.collection('requestedSessions');
   late Query query = usersRef
@@ -47,12 +49,12 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
       FirebaseFirestore.instance.collection('acceptedSessions').doc();
 
   void _saveValues({
-    required String SessionName,
+    required String SessionN,
     required String ChildName,
     required String Date,
     required String TimeRange,
     required String ParentNote,
-    required String SessionGoul,
+    required String SessionG,
     required String ParentUid,
     required String sessionID,
     required String therapistName,
@@ -62,7 +64,7 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
   }) async {
     try {
       await TherapistRequest.set({
-        'SessionName': SessionName,
+        'SessionName': SessionN,
         'ChildName': ChildName,
         'ChildID': ChildID,
         'TherapistName': therapistName,
@@ -70,7 +72,7 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
         'DateTime': dateTime,
         'TimeRange': TimeRange,
         'ParentNote': ParentNote,
-        'SessionGoul': SessionGoul,
+        'SessionGoul': SessionG,
         'TherapistID': singedInUser.uid,
         'ParentId': ParentUid,
         'sessionID': sessionID,
@@ -149,114 +151,115 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: StreamBuilder<QuerySnapshot>(
-        stream: usersStream,
-        builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-          if (streamSnapshot.hasData) {
-            return ListView.builder(
-                itemCount: streamSnapshot.data!.docs.length,
-                itemBuilder: (context, index) {
-                  final DocumentSnapshot documentSnapshot =
-                      streamSnapshot.data!.docs[index];
+    return StreamBuilder<QuerySnapshot>(
+      stream: usersStream,
+      builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+        if (streamSnapshot.hasData) {
+          return ListView.builder(
+              itemCount: streamSnapshot.data!.docs.length,
+              itemBuilder: (context, index) {
+                final DocumentSnapshot documentSnapshot =
+                    streamSnapshot.data!.docs[index];
 
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 15,
-                    ),
-                    child: Card(
-                      elevation: 4,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(17.80)),
-                      child: Container(
-                        width: MediaQuery.of(context).size.width,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15,
+                  ),
+                  child: Card(
+                    elevation: 4,
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(17.80)),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 10),
 
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.medical_information_rounded,
-                                      color: Color(0xff394445),
-                                      size: 21,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Text(
-                                      documentSnapshot['ParentName'],
-                                      textAlign: TextAlign.right,
-                                      style: TextStyle(
-                                        color: Color(0xff385a4a),
-                                        fontSize: 17,
-                                        fontFamily: "Cairo",
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.date_range,
-                                      color: Color(0xff394445),
-                                      size: 22,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Text(
-                                      documentSnapshot['Date'],
-                                      style: TextStyle(
-                                        color: Color(0xff6888a0),
-                                        fontSize: 14,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.watch_later,
-                                      color: Color(0xff394445),
-                                      size: 22,
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Text(
-                                      documentSnapshot['timeRange'],
-                                      style: const TextStyle(
-                                          color: Color(0xff385a4a)),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 15),
-                              child: Column(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Row(
                                 children: [
-                                  ElevatedButton(
-                                    onPressed: () async {
-                                      showModalBottomSheet<void>(
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(35.0),
-                                              topRight: Radius.circular(35.0),
-                                            ),
+                                  Icon(
+                                    Icons.medical_information_rounded,
+                                    color: Color(0xff394445),
+                                    size: 21,
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Text(
+                                    documentSnapshot['ParentName'],
+                                    textAlign: TextAlign.right,
+                                    style: TextStyle(
+                                      color: Color(0xff385a4a),
+                                      fontSize: 17,
+                                      fontFamily: "Cairo",
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.date_range,
+                                    color: Color(0xff394445),
+                                    size: 22,
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Text(
+                                    documentSnapshot['Date'],
+                                    style: TextStyle(
+                                      color: Color(0xff6888a0),
+                                      fontSize: 14,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.watch_later,
+                                    color: Color(0xff394445),
+                                    size: 22,
+                                  ),
+                                  const SizedBox(width: 10),
+                                  Text(
+                                    documentSnapshot['timeRange'],
+                                    style: const TextStyle(
+                                        color: Color(0xff385a4a)),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 15),
+                            child: Column(
+                              children: [
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    showModalBottomSheet<void>(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(35.0),
+                                            topRight: Radius.circular(35.0),
                                           ),
-                                          isScrollControlled: true,
-                                          context: context,
-                                          builder: (BuildContext context) {
-                                            return StatefulBuilder(builder:
+                                        ),
+                                        isScrollControlled: true,
+                                        context: context,
+                                        builder: (BuildContext context) {
+                                          return Form(
+                                            key: _formKey,
+                                            child: StatefulBuilder(builder:
                                                 (BuildContext context,
                                                     StateSetter setState) {
                                               final bottomInset =
@@ -313,6 +316,11 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
                                                                               20),
                                                                   child:
                                                                       TextFormField(
+                                                                    onChanged:
+                                                                        (value) {
+                                                                      SessionN =
+                                                                          value;
+                                                                    },
                                                                     validator:
                                                                         (value) {
                                                                       if (value ==
@@ -326,8 +334,9 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
                                                                     autovalidateMode:
                                                                         AutovalidateMode
                                                                             .onUserInteraction,
-                                                                    controller:
-                                                                        SessionName,
+
+                                                                    // controller:
+                                                                    // SessionName,
                                                                     decoration:
                                                                         InputDecoration(
                                                                       border:
@@ -576,14 +585,19 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
                                                                         }
                                                                         return null;
                                                                       },
+                                                                      onChanged:
+                                                                          ((value) {
+                                                                        SessionG =
+                                                                            value;
+                                                                      }),
                                                                       autovalidateMode:
                                                                           AutovalidateMode
                                                                               .onUserInteraction,
                                                                       keyboardType:
                                                                           TextInputType
                                                                               .multiline,
-                                                                      controller:
-                                                                          SessionGoul,
+                                                                      // controller:
+                                                                      // SessionGoul,
                                                                       decoration:
                                                                           InputDecoration(
                                                                         border:
@@ -643,92 +657,86 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
                                                                         )),
                                                                     onPressed:
                                                                         () async {
-                                                                      final String
-                                                                          SessionId =
-                                                                          const Uuid()
-                                                                              .v4();
-                                                                      _saveValues(
-                                                                        SessionName:
-                                                                            SessionName.text,
-                                                                        ChildName:
-                                                                            documentSnapshot['ChildName'],
-                                                                        Date: documentSnapshot[
-                                                                            'Date'],
-                                                                        TimeRange:
-                                                                            documentSnapshot['timeRange'],
-                                                                        ParentNote:
-                                                                            documentSnapshot['ParentNote'],
-                                                                        SessionGoul:
-                                                                            SessionGoul.text,
-                                                                        ParentUid:
-                                                                            documentSnapshot['ParentId'],
-                                                                        sessionID:
-                                                                            SessionId,
-                                                                        therapistName:
-                                                                            documentSnapshot['TherapistName'],
-                                                                        dateTime:
-                                                                            documentSnapshot['DateTime'],
-                                                                        ChildID:
-                                                                            documentSnapshot['ChildID'],
-                                                                        centerid:
-                                                                            documentSnapshot['centerid'],
-                                                                      );
+                                                                      if (_formKey
+                                                                          .currentState!
+                                                                          .validate()) {
+                                                                        final String
+                                                                            SessionId =
+                                                                            const Uuid().v4();
 
-                                                                      SessionName
-                                                                          .clear();
-                                                                      SessionGoul
-                                                                          .clear();
-
-                                                                      if (documentSnapshot[
-                                                                              'status'] !=
-                                                                          null) {
-                                                                        String
-                                                                            requestId =
-                                                                            documentSnapshot['RequestId'];
-                                                                        QuerySnapshot querySnapshot = await FirebaseFirestore
-                                                                            .instance
-                                                                            .collection(
-                                                                                'requestedSessions')
-                                                                            .where('RequestId',
-                                                                                isEqualTo: requestId)
-                                                                            .get();
-
-                                                                        querySnapshot
-                                                                            .docs
-                                                                            .forEach((document) {
-                                                                          document
-                                                                              .reference
-                                                                              .update({
-                                                                            "status":
-                                                                                "accepted"
-                                                                          });
-                                                                        });
-
-                                                                        final therapySessionRef = FirebaseFirestore
-                                                                            .instance
-                                                                            .collection('Child')
-                                                                            .doc(
+                                                                        _saveValues(
+                                                                          SessionN:
+                                                                              SessionN,
+                                                                          ChildName:
+                                                                              documentSnapshot['ChildName'],
+                                                                          Date:
+                                                                              documentSnapshot['Date'],
+                                                                          TimeRange:
+                                                                              documentSnapshot['timeRange'],
+                                                                          ParentNote:
+                                                                              documentSnapshot['ParentNote'],
+                                                                          SessionG:
+                                                                              SessionG,
+                                                                          ParentUid:
+                                                                              documentSnapshot['ParentId'],
+                                                                          sessionID:
+                                                                              SessionId,
+                                                                          therapistName:
+                                                                              documentSnapshot['TherapistName'],
+                                                                          dateTime:
+                                                                              documentSnapshot['DateTime'],
+                                                                          ChildID:
                                                                               documentSnapshot['ChildID'],
-                                                                            )
-                                                                            .collection('therapy_sessions')
-                                                                            .doc();
+                                                                          centerid:
+                                                                              documentSnapshot['centerid'],
+                                                                        );
 
-                                                                        await therapySessionRef
-                                                                            .set({
-                                                                          'therapist_id': FirebaseAuth
+                                                                        SessionName
+                                                                            .clear();
+                                                                        SessionGoul
+                                                                            .clear();
+
+                                                                        if (documentSnapshot['status'] !=
+                                                                            null) {
+                                                                          String
+                                                                              requestId =
+                                                                              documentSnapshot['RequestId'];
+                                                                          QuerySnapshot querySnapshot = await FirebaseFirestore
                                                                               .instance
-                                                                              .currentUser!
-                                                                              .uid,
-                                                                          'status':
-                                                                              'accepted',
-                                                                        });
+                                                                              .collection('requestedSessions')
+                                                                              .where('RequestId', isEqualTo: requestId)
+                                                                              .get();
+
+                                                                          querySnapshot
+                                                                              .docs
+                                                                              .forEach((document) {
+                                                                            document.reference.update({
+                                                                              "status": "accepted"
+                                                                            });
+                                                                          });
+
+                                                                          final therapySessionRef = FirebaseFirestore
+                                                                              .instance
+                                                                              .collection('Child')
+                                                                              .doc(
+                                                                                documentSnapshot['ChildID'],
+                                                                              )
+                                                                              .collection('therapy_sessions')
+                                                                              .doc();
+
+                                                                          await therapySessionRef
+                                                                              .set({
+                                                                            'therapist_id':
+                                                                                FirebaseAuth.instance.currentUser!.uid,
+                                                                            'status':
+                                                                                'accepted',
+                                                                          });
+                                                                        }
+                                                                        Navigator.of(context)
+                                                                            .pop();
+                                                                        Navigator.of(context)
+                                                                            .pop();
                                                                       }
-                                                                      Navigator.of(
-                                                                              context)
-                                                                          .pop();
-                                                                      Navigator.of(
-                                                                              context)
-                                                                          .pop();
                                                                     },
                                                                     child: Text(
                                                                       "اضافة الجلسة",
@@ -755,208 +763,201 @@ class _AppointmentRequestsState extends State<AppointmentRequests> {
                                                               ],
                                                             ),
                                                           ))));
-                                            });
-                                          });
-                                    },
-                                    child: Text(
-                                      "قبول الجلسة",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontFamily: "Rubik",
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                            }),
+                                          );
+                                        });
+                                  },
+                                  child: Text(
+                                    "قبول الجلسة",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontFamily: "Rubik",
+                                      fontWeight: FontWeight.w500,
                                     ),
-                                    style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(40, 30),
-                                        backgroundColor: Color(0xff406553),
-                                        shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10)),
-                                        )),
                                   ),
-                                  ElevatedButton(
-                                    onPressed: () async {
-                                      String requestId =
-                                          documentSnapshot['RequestId'];
-                                      String reason = '';
-                                      showDialog(
-                                        context: context,
-                                        builder: (context) => Theme(
-                                          data: ThemeData(
-                                              useMaterial3: true,
-                                              colorScheme: ColorScheme.fromSeed(
-                                                  seedColor:
-                                                      const Color(0xff385a4a))),
-                                          child: Directionality(
-                                            textDirection: TextDirection.rtl,
-                                            child: AlertDialog(
-                                              title: const Text(
-                                                'رفض الجلسة',
-                                                textAlign: TextAlign.right,
-                                                style: TextStyle(
-                                                  color: Color(0xff385a4a),
-                                                  fontSize: 16,
-                                                  fontFamily: "Cairo",
-                                                  fontWeight: FontWeight.w700,
-                                                ),
+                                  style: ElevatedButton.styleFrom(
+                                      minimumSize: Size(40, 30),
+                                      backgroundColor: Color(0xff406553),
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                      )),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    String requestId =
+                                        documentSnapshot['RequestId'];
+                                    String reason = '';
+                                    showDialog(
+                                      context: context,
+                                      builder: (context) => Theme(
+                                        data: ThemeData(
+                                            useMaterial3: true,
+                                            colorScheme: ColorScheme.fromSeed(
+                                                seedColor:
+                                                    const Color(0xff385a4a))),
+                                        child: Directionality(
+                                          textDirection: TextDirection.rtl,
+                                          child: AlertDialog(
+                                            title: const Text(
+                                              'رفض الجلسة',
+                                              textAlign: TextAlign.right,
+                                              style: TextStyle(
+                                                color: Color(0xff385a4a),
+                                                fontSize: 16,
+                                                fontFamily: "Cairo",
+                                                fontWeight: FontWeight.w700,
                                               ),
-                                              content: Container(
-                                                width: double.maxFinite,
-                                                child: TextField(
-                                                  onChanged: (value) {
-                                                    reason = value;
-                                                  },
-                                                  keyboardType:
-                                                      TextInputType.multiline,
-                                                  maxLines: 3,
-                                                  textDirection:
-                                                      TextDirection.rtl,
-                                                  decoration: InputDecoration(
-                                                    border: OutlineInputBorder(
-                                                      borderSide:
-                                                          BorderSide.none,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    filled: true,
-                                                    fillColor: Color.fromARGB(
-                                                        28, 155, 176, 165),
-                                                    hintText:
-                                                        "السبب من رفض الجلسة",
-                                                  ),
-                                                ),
-                                              ),
-                                              actions: [
-                                                Align(
-                                                  alignment: Alignment.center,
-                                                  child: Container(
-                                                    width: 150,
-                                                    child: TextButton(
-                                                      style:
-                                                          TextButton.styleFrom(
-                                                        backgroundColor:
-                                                            Color(0xff394445),
-                                                        // set text color here
-                                                      ),
-                                                      onPressed: () async {
-                                                        QuerySnapshot
-                                                            querySnapshot =
-                                                            await FirebaseFirestore
-                                                                .instance
-                                                                .collection(
-                                                                    'requestedSessions')
-                                                                .where(
-                                                                    'RequestId',
-                                                                    isEqualTo:
-                                                                        requestId)
-                                                                .get();
-                                                        querySnapshot.docs
-                                                            .forEach(
-                                                                (document) {
-                                                          document.reference
-                                                              .delete();
-                                                        });
-                                                        // Send reason to Parent page
-
-                                                        FirebaseFirestore
-                                                            .instance
-                                                            .collection(
-                                                                'Parent')
-                                                            .doc(
-                                                                documentSnapshot[
-                                                                    'ParentId'])
-                                                            .collection(
-                                                                'RejuctAndCanceld')
-                                                            .add({
-                                                          'RequestId':
-                                                              requestId,
-                                                          'Reason': reason,
-                                                          'status': "rejected",
-                                                          'Range':
-                                                              documentSnapshot[
-                                                                  'timeRange'],
-                                                          'Date':
-                                                              documentSnapshot[
-                                                                  'Date'],
-                                                          'isRead': false,
-                                                          'TherapisName':
-                                                              documentSnapshot[
-                                                                  'TherapistName'],
-                                                        });
-                                                        Navigator.pop(context);
-                                                      },
-                                                      child: const Text(
-                                                        'إرسال',
-                                                        style: TextStyle(
-                                                          color: Colors.white,
-                                                          fontSize: 15,
-                                                          fontFamily: "Cairo",
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
                                             ),
+                                            content: Container(
+                                              width: double.maxFinite,
+                                              child: TextField(
+                                                onChanged: (value) {
+                                                  reason = value;
+                                                },
+                                                keyboardType:
+                                                    TextInputType.multiline,
+                                                maxLines: 3,
+                                                textDirection:
+                                                    TextDirection.rtl,
+                                                decoration: InputDecoration(
+                                                  border: OutlineInputBorder(
+                                                    borderSide: BorderSide.none,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor: Color.fromARGB(
+                                                      28, 155, 176, 165),
+                                                  hintText:
+                                                      "السبب من رفض الجلسة",
+                                                ),
+                                              ),
+                                            ),
+                                            actions: [
+                                              Align(
+                                                alignment: Alignment.center,
+                                                child: Container(
+                                                  width: 150,
+                                                  child: TextButton(
+                                                    style: TextButton.styleFrom(
+                                                      backgroundColor:
+                                                          Color(0xff394445),
+                                                      // set text color here
+                                                    ),
+                                                    onPressed: () async {
+                                                      QuerySnapshot
+                                                          querySnapshot =
+                                                          await FirebaseFirestore
+                                                              .instance
+                                                              .collection(
+                                                                  'requestedSessions')
+                                                              .where(
+                                                                  'RequestId',
+                                                                  isEqualTo:
+                                                                      requestId)
+                                                              .get();
+                                                      querySnapshot.docs
+                                                          .forEach((document) {
+                                                        document.reference
+                                                            .delete();
+                                                      });
+                                                      // Send reason to Parent page
+
+                                                      FirebaseFirestore.instance
+                                                          .collection('Parent')
+                                                          .doc(documentSnapshot[
+                                                              'ParentId'])
+                                                          .collection(
+                                                              'RejuctAndCanceld')
+                                                          .add({
+                                                        'RequestId': requestId,
+                                                        'Reason': reason,
+                                                        'status': "rejected",
+                                                        'Range':
+                                                            documentSnapshot[
+                                                                'timeRange'],
+                                                        'Date':
+                                                            documentSnapshot[
+                                                                'Date'],
+                                                        'isRead': false,
+                                                        'TherapisName':
+                                                            documentSnapshot[
+                                                                'TherapistName'],
+                                                      });
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: const Text(
+                                                      'إرسال',
+                                                      style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 15,
+                                                        fontFamily: "Cairo",
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      );
-                                    },
-                                    child: Text(
-                                      "رفض الجلسة",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 12,
-                                        fontFamily: "Rubik",
-                                        fontWeight: FontWeight.w500,
                                       ),
+                                    );
+                                  },
+                                  child: Text(
+                                    "رفض الجلسة",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontFamily: "Rubik",
+                                      fontWeight: FontWeight.w500,
                                     ),
-                                    style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(40, 30),
-                                        backgroundColor: Color(0xffd21414),
-                                        shape: const RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(10)),
-                                        )),
                                   ),
-                                ],
-                              ),
+                                  style: ElevatedButton.styleFrom(
+                                      minimumSize: Size(40, 30),
+                                      backgroundColor: Color(0xffd21414),
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                      )),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-
-                        // title: Text(
-                        //   documentSnapshot['name'],
-                        //   textAlign: TextAlign.right,
-                        //   style: TextStyle(
-                        //     color: Color(0xff385a4a),
-                        //     fontSize: 15,
-                        //     fontFamily: "Cairo",
-                        //     fontWeight: FontWeight.w700,
-                        //   ),
-                        // ),
-                        // subtitle: Text(
-                        //   documentSnapshot['ParentName'],
-                        //   textAlign: TextAlign.right,
-                        //   style: TextStyle(
-                        //     color: Color(0xff6888a0),
-                        //     fontSize: 12,
-                        //   ),
-                        // ),
+                          ),
+                        ],
                       ),
+
+                      // title: Text(
+                      //   documentSnapshot['name'],
+                      //   textAlign: TextAlign.right,
+                      //   style: TextStyle(
+                      //     color: Color(0xff385a4a),
+                      //     fontSize: 15,
+                      //     fontFamily: "Cairo",
+                      //     fontWeight: FontWeight.w700,
+                      //   ),
+                      // ),
+                      // subtitle: Text(
+                      //   documentSnapshot['ParentName'],
+                      //   textAlign: TextAlign.right,
+                      //   style: TextStyle(
+                      //     color: Color(0xff6888a0),
+                      //     fontSize: 12,
+                      //   ),
+                      // ),
                     ),
-                  );
-                });
-          }
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        },
-      ),
+                  ),
+                );
+              });
+        }
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      },
     );
   }
 }

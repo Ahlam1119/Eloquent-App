@@ -5,6 +5,8 @@ import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/secStory/firs
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildevents/secStory/thirdEventSec.dart';
 import 'package:eloquentapp/Child/Page/Eloquent_Phases/Buildingconcepts.dart';
 import 'package:flutter/material.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class secEventSec extends StatefulWidget {
   final String childId;
@@ -211,8 +213,21 @@ class _secEventSecState extends State<secEventSec> {
                                                     Align(
                                                         alignment: Alignment
                                                             .bottomCenter,
-                                                        child: Image.asset(
-                                                            "images/VolumUp.png")),
+                                                        child: GestureDetector(
+                                                          onTap: () async {
+                                                            AssetsAudioPlayer
+                                                                    .newPlayer()
+                                                                .open(
+                                                              Audio(
+                                                                  "images/StoryVoice.wav"),
+                                                              autoStart: true,
+                                                              showNotification:
+                                                                  true,
+                                                            );
+                                                          },
+                                                          child: Image.asset(
+                                                              "images/VolumUp.png"),
+                                                        )),
                                                   ],
                                                 ),
                                               )),
@@ -276,7 +291,7 @@ class _secEventSecState extends State<secEventSec> {
                                                                 childId:
                                                                     ChildID,
                                                                 page:
-                                                                    'thireeventSec'),
+                                                                    'thirdEventSec'),
                                                       ));
                                                 },
                                               ),
@@ -309,7 +324,7 @@ class _secEventSecState extends State<secEventSec> {
                                                                 childId:
                                                                     ChildID,
                                                                 page:
-                                                                    'secondEvent'),
+                                                                    'firstEventSec'),
                                                       ));
                                                 },
                                               ),
