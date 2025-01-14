@@ -66,32 +66,32 @@ Widget customBottomTitile(double value, TitleMeta meta) {
   Widget text;
   if (value.toInt() == 0) {
     text = const Text(
-      'S',
+      'M',
       style: style,
     );
   } else if (value.toInt() == 1) {
     text = const Text(
-      'M',
+      'T',
       style: style,
     );
   } else if (value.toInt() == 2) {
     text = const Text(
-      'T',
+      'W',
       style: style,
     );
   } else if (value.toInt() == 3) {
     text = const Text(
-      'W',
+      'T',
       style: style,
     );
   } else if (value.toInt() == 4) {
     text = const Text(
-      'T',
+      'F',
       style: style,
     );
   } else if (value.toInt() == 5) {
     text = const Text(
-      'F',
+      'S',
       style: style,
     );
   } else if (value.toInt() == 6) {

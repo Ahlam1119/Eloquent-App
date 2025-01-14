@@ -24,27 +24,14 @@ class _CenterHomeScreenState extends State<CenterHomeScreen> {
   @override
   void initState() {
     super.initState();
-    //getCurrentUser();
     getUserData();
     _getTherapistCount();
     getMostActiveTherapist();
     initchart();
+    //initchartt();
     _getChildrenCount();
   }
 
-/*
-  void getCurrentUser() {
-    try {
-      final user = _auth.currentUser;
-      if (user != null) {
-        singedInUser = user;
-      }
-    } catch (e) {
-      print(e);
-      print(singedInUser?.uid);
-    }
-  }
-*/
   Map<String, dynamic> centerData = {};
   bool isLoded = true;
 

@@ -2,18 +2,17 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ChartFunctions {
   static const List<String> kDaysOfWeek = [
-    'Sunday',
     'Monday',
     'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
     'Saturday',
+    'Sunday',
   ];
-
   static String getDayOfWeek(Timestamp timestamp) {
     final dateTime = timestamp.toDate();
-    return kDaysOfWeek[dateTime.weekday];
+    return kDaysOfWeek[dateTime.weekday - 1];
   }
 
   static Future<List<double>> takeSummary(
@@ -48,6 +47,6 @@ class ChartFunctions {
   }
 
   static Future<List<double>> takeSummaryPastWeek(String centerId) async {
-    return takeSummary(centerId, 7, 14);
+    return takeSummary(centerId, 8, 15);
   }
 }
